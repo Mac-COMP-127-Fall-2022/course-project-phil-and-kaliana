@@ -1,0 +1,77 @@
+SET
+Cards have traits
+Item (diamond, oval, squiggle)
+Color of item (blue, red, green)
+Number of item (1, 2, 3)
+Item fill (empty, lined, full)
+To make a set, it must have–for each category–everything the same or different
+
+
+Game
+Cards 		cardsindeck(81)
+		cardsonboard(0)
+Deck
+Board
+
+sexy
+SetGame
+	// Variables
+	cardsonboard
+	cardsindeck
+
+	// Functions
+	SetGame(Int cardsonboard, Int cardsindeck)
+
+generateGame() {
+		generateCards()
+}
+Board
+// Variables
+
+// Functions
+checkBoard() {
+		if (!Board.isFull()) {
+			addCards()
+		} else {
+			addCards()
+		}
+}
+
+isFull() {
+	if (cardsonboard >= 12) {
+		Return True;
+	} else {
+		Return Flase;
+	}
+}
+
+Card
+
+Cards
+// Variables
+CardList []
+	
+// Functions
+
+	Map: CardTraits 
+		
+generateCards() {
+	For [shape: in
+}
+
+addCards() {
+	
+}
+
+// Card Elements
+	Color Options [
+	Red, Orange, Yellow, Green, Blue, Purple, Black
+	]
+	
+	Shape Options [
+	Diamond, Oval, Squiggle, Heart, Cross, Bouba-esque, Kiki-esque
+	]
+
+	Fill Options [
+	Full, Empty, Cross Hashed, Diagonal Hashed, Stippled
+	]
