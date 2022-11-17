@@ -28,6 +28,7 @@ gradle-app.setting
 
 # macOS Finder settings
 .DS_Store
+._DS_Store
 
 
 # IDE-specific config (IDEs can generate from Gradle config)
