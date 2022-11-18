@@ -49,11 +49,16 @@ Subtitle: "Compare to active ingredient in Wordle(TM)"
 
 - private final `TextField` guessField
 
+- (private `WerdillGame` game/parent)??
+
 ### Instance Variables
 - private `List<List<Rectangle>>` gridRectangles *( \* each row has its own list of rectangles to keep them organized.)*
 
 ### Instance Methods
-1. constructor()
+1. constructor(parent)
+    1. guessField <- callback for enter key (closure to parent's processInputFromGrid)
+    17. (parent = parent)??
+    42069. 
 
 2. pub `void` reset() (reset the grid)
     1. Check if there are blocks already there (if so, `resetRectangleColor()`)
@@ -62,18 +67,18 @@ Subtitle: "Compare to active ingredient in Wordle(TM)"
             2. Create each rectangle object
                 - Store in list
                 - Add to group
-                - Add {!} `return callback` to last boxes each row
-    2. 
 
 3. priv `void` resetRectangleColor() (resets color to BASE_COLOR)
     1. Loop thru gridRectangles: 
         1. Set fill color to BASE_COLOR
 
-3. priv `string` 
+3. priv `string` getGuess()
+    1. whatevers in the text field
 
-4. private `void` showCheckedGuess()
+4. private `void` showCheckedGuess(guess: str)
     1. guessNumber++
     2. get gridRectangles.get(guessNumber)
+    3. put each guess ltr in
 
 <!-- 3. pub `void` -->
 
@@ -87,9 +92,8 @@ Subtitle: "Compare to active ingredient in Wordle(TM)"
 - private `List<Str>` solution
 
 ### Instance Methods
-1. constructor(wordList)
-    1. chooses a solution randomly
-    2. solution -> list
+1. constructor(solution)
+    1. solution -> list
 
 2. public `List<Integer>` checkWord(guess: `Str`) (checks if word is solution [0 = not in word; 1 = in word but wrong spot; 2 = in right spot])
     1. guess -> ArrayList
