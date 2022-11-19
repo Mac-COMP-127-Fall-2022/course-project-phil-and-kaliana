@@ -29,6 +29,13 @@ public class WerdillGame {
         canvas.add(ui);
     }
 
+    // TODO: remove this when done
+    private void testSetRow() {
+        ui.setCurrentRowTo(new int[] { 0, 0, 1, 1, 2 });
+        
+        ui.add(ui);
+    }
+
     private String chooseSolution() {
         return null;
     }
@@ -38,6 +45,7 @@ public class WerdillGame {
     }
     
     public static void main(String[] args) throws IOException {
-        new WerdillGame();
+        WerdillGame game = new WerdillGame();
+        game.testSetRow(); // temporary soln
     }
 }

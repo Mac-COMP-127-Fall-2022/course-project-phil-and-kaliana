@@ -21,18 +21,17 @@ public class WerdillUI extends GraphicsGroup {
     private static final Color WRONG_RIGHT_TEXT_COLOR = new Color(0xffffff);
     private static final Color NOT_IN_AND_BASE_TEXT_COLOR = new Color(0xffffff);
 
-    private static final int SQUARE_SIDE_LENGTH = 40;
-    private static final int PADDING = 5;
+    private static final int SQUARE_SIDE_LENGTH = 60;
+    private static final int PADDING = 10;
 
     private int guessNumber;
-    private ArrayList<ArrayList<Rectangle>> squares;
+    private final ArrayList<ArrayList<Rectangle>> squares;
 
     private final CanvasWindow canvas;
 
 
     public WerdillUI(WerdillGame werdillGame, CanvasWindow canvas) {
         this.canvas = canvas;
-
         this.squares = new ArrayList<>();
 
         canvas.onKeyDown((event) -> {
@@ -60,10 +59,13 @@ public class WerdillUI extends GraphicsGroup {
 
             squares.add(newList);
 
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 5; j++) { // extract 5 to constant? (in case we want to add longer words)
                 Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
                 add(nextSquare);
+                
                 x += PADDING + SQUARE_SIDE_LENGTH;
+
+                newList.add(nextSquare);
             }
 
             x = PADDING;
@@ -73,10 +75,35 @@ public class WerdillUI extends GraphicsGroup {
         canvas.draw();
     }
 
-    private void setCurrentRowTo(int[] checkedCharacters) {
+    public void setCurrentRowTo(int[] checkedCharacters) { //TODO: SET BACK TO PRIVATE AFTER TESTING
         // 0 = not in; 1 = in wrong position; 2 = in correct position
 
-        
+        ArrayList<Rectangle> row = squares.get(guessNumber);
+        for (int i = 0; i < 5; i++) {
+            Rectangle square = row.get(i);
+            switch (checkedCharacters[i]) {
+                case 0:
+                    square.setFillColor(NOT_IN_COLOR);
+                    square.setStrokeColor(NOT_IN_COLOR);
+                    break;
+            
+                case 1:
+                    square.setFillColor(WRONG_POSITION_COLOR);
+                    square.setStrokeColor(WRONG_POSITION_COLOR);
+                    break;
+            
+                case 2:
+                    square.setFillColor(RIGHT_POSITION_COLOR);
+                    square.setStrokeColor(RIGHT_POSITION_COLOR);
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
+        guessNumber += 1;
+        canvas.draw();
     }
 
 }
