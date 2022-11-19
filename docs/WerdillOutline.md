@@ -45,13 +45,13 @@ Subtitle: "Compare to active ingredient in Wordle(TM)"
 - private static final `Integer` RECTANGLE_SIDE_LENGTH =
 - private static final `Integer` RECTANGLE_PADDING =
 
+### Instance Variables
 - private `int` guessNumber = 0;
 
 - private final `TextField` guessField
 
 - (private `WerdillGame` game/parent)??
 
-### Instance Variables
 - private `List<List<Rectangle>>` gridRectangles *( \* each row has its own list of rectangles to keep them organized.)*
 
 ### Instance Methods
