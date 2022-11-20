@@ -37,7 +37,7 @@ public class WerdillUI extends GraphicsGroup {
         this.canvas = canvas;
         this.checker = checker;
 
-        canvas.onKeyDown((event) -> {
+        canvas.onKeyDown((event) -> { //TODO: needs refactoring into smaller methods
             Key key = event.getKey();
             if (key == Key.RETURN_OR_ENTER && currentColumn >= 4) {
                 sumbitGuess();
@@ -73,7 +73,12 @@ public class WerdillUI extends GraphicsGroup {
         }
 
         String[] guess = getGuess();
-        int[] checked = checker.check(guess);
+        Integer[] checked = checker.check(guess);
+
+        if (checked == null) {
+            doInvalidGuess();
+            return;
+        }
 
         setUnselected();
         currentColumn = 0;
@@ -82,6 +87,10 @@ public class WerdillUI extends GraphicsGroup {
 
         currentRow += 1;
         setSelected();
+    }
+
+    private void doInvalidGuess() {
+        return;
     }
 
     private String[] getGuess() {
@@ -188,8 +197,13 @@ public class WerdillUI extends GraphicsGroup {
         squareLabels[row][column] = nextLabel;
     }
 
-    private void setCurrentRowTo(int[] checked) { //TODO: is this method a bit long?
+    private void setCurrentRowTo(Integer[] checked) { //TODO: is this method a bit long?
         // 0 = not in; 1 = in wrong position; 2 = in correct position
+        for (Integer integer : checked) {
+            if (integer == null) {
+                return;
+            }
+        }
 
         Rectangle[] row = squares[currentRow];
         for (int i = 0; i < 5; i++) {
@@ -197,11 +211,6 @@ public class WerdillUI extends GraphicsGroup {
             label.setFillColor(Color.WHITE);
 
             Rectangle square = row[i];
-
-            remove(square);
-            canvas.draw();
-
-            canvas.pause(34);
             switch (checked[i]) {
                 case 0:
                     square.setFillColor(NOT_IN_COLOR);
@@ -221,12 +230,9 @@ public class WerdillUI extends GraphicsGroup {
                 default:
                     break;
             }
-
-            add(square);
-            add(label);
             canvas.draw();
 
-            canvas.pause(166);
+            canvas.pause(200);
         }
     }
 }
