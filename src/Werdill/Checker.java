@@ -21,9 +21,11 @@ public class Checker {
 
     public int[] check(String[] guess) {
         int[] ret = new int[5];
+        // <testVersion>
         for (int i = 0; i < 5; i++) {
             ret[i] = rand.nextInt(3);
         }
+        // </testVersion>
         return ret;
     }
 
