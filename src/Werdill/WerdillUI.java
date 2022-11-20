@@ -2,21 +2,21 @@ package Werdill;
 
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.macalester.graphics.events.Key;
 
 public class WerdillUI extends GraphicsGroup {
-    // private static final Color BASE_COLOR = new Color();
-    
-    private static final Color NOT_IN_COLOR = new Color(0xafafaf);
+    private static final Color BACKGROUND_COLOR = new Color(0xffffff);
+
+    private static final Color BASE_COLOR = Color.WHITE;
+    private static final Color SELECTED_COLOR = Color.LIGHT_GRAY;
+
+    private static final Color NOT_IN_COLOR = Color.GRAY;//new Color(0xafafaf);
     private static final Color WRONG_POSITION_COLOR = new Color(0xffc900);
     private static final Color RIGHT_POSITION_COLOR = new Color(0x049c00);
-    private static final Color BACKGROUND_COLOR = new Color(0xffffff);
 
     private static final Color WRONG_RIGHT_TEXT_COLOR = new Color(0xffffff);
     private static final Color NOT_IN_AND_BASE_TEXT_COLOR = new Color(0xffffff);
@@ -24,64 +24,178 @@ public class WerdillUI extends GraphicsGroup {
     private static final int SQUARE_SIDE_LENGTH = 60;
     private static final int PADDING = 10;
 
-    private int guessNumber;
-    private final ArrayList<ArrayList<Rectangle>> squares;
+    private int currentRow;
+    private int currentColumn;
+    private final Rectangle[][] squares = new Rectangle[6][5];
+    private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
 
     private final CanvasWindow canvas;
+    private final Checker checker;
 
-
-    public WerdillUI(WerdillGame werdillGame, CanvasWindow canvas) {
+    public WerdillUI(CanvasWindow canvas, Checker checker) {
         this.canvas = canvas;
-        this.squares = new ArrayList<>();
+        this.checker = checker;
 
         canvas.onKeyDown((event) -> {
-            if (event.getKey() == Key.RETURN_OR_ENTER) {
-
+            Key key = event.getKey();
+            if (key == Key.RETURN_OR_ENTER && currentColumn >= 4) {
+                sumbitGuess();
+            } 
+            if (key == Key.DELETE_OR_BACKSPACE) {
+                GraphicsText label = squareLabels[currentRow][currentColumn];
+                label.setText("");
+                refreshGraphicsTextPositions();
+                shiftColumnLeft();
+            } else if (key == Key.LEFT_ARROW) {
+                shiftColumnLeft();
+            } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
+                shiftColumnRight();
+            } else if ("QWERTYUIOPASDFGHJKLZXCVBNM".contains(key.toString()) && currentColumn < 5) {
+                GraphicsText label = squareLabels[currentRow][currentColumn];
+                label.setText(key.toString());
+                refreshGraphicsTextPositions();
+                shiftColumnRight();
             }
         });
 
         reset();
     }
 
-    public void reset() {
-        guessNumber = 0;
-
-        if (squares.size() == 6) {
-            // will eventually reset the colors if rectangles exist
+    private void sumbitGuess() {
+        for (int i = 0; i < 5; i++) {
+            if (squareLabels[currentRow][i].getText() == "") {
+                return;
+            }
         }
 
-        // squares = new ArrayList<>();
+        String[] guess = getGuess();
+        int[] checked = checker.check(guess);
 
+        setUnselected();
+        currentColumn = 0;
+        
+        setCurrentRowTo(checked);
+
+        currentRow += 1;
+        setSelected();
+    }
+
+    private String[] getGuess() {
+        String[] ret = new String[5];
+        for (int i = 0; i < 5; i++) {
+            ret[i] = squareLabels[currentRow][i].getText();
+        }
+        return ret;
+    }
+
+    private void shiftColumnRight() {
+        if (currentColumn > 3) {
+            return;
+        }
+
+        setUnselected();
+        currentColumn++;
+        setSelected();
+    }
+    
+    private void shiftColumnLeft() {
+        if (currentColumn < 1) {
+            return;
+        }
+
+        setUnselected();
+        currentColumn--;
+        setSelected();
+    }
+
+    private void setSelected() {
+        // squares[currentRow][currentColumn].setStrokeColor(Color.RED);
+        squares[currentRow][currentColumn].setStrokeWidth(PADDING/2);
+        squares[currentRow][currentColumn].setFillColor(SELECTED_COLOR);
+    }
+    
+    private void setUnselected() {
+        // squares[currentRow][currentColumn].setStrokeColor(Color.BLACK);
+        squares[currentRow][currentColumn].setStrokeWidth(1);
+        squares[currentRow][currentColumn].setFillColor(BASE_COLOR);
+    }
+
+    public void reset() {
+        currentRow = 0;
+        currentColumn = 0;
+            
+        assembleArrayOfSquares();
+        assembleArrayOfGraphicsTexts();
+
+        canvas.draw();
+    }
+
+    private void assembleArrayOfSquares() {
         int x = PADDING;
         int y = PADDING;
         for (int i = 0; i < 6; i++) {
-            ArrayList<Rectangle> newList = new ArrayList<>();
-
-            squares.add(newList);
-
-            for (int j = 0; j < 5; j++) { // extract 5 to constant? (in case we want to add longer words)
-                Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
-                add(nextSquare);
-                
+            for (int j = 0; j < 5; j++) {
+                newSquare(x, y, i, j);
                 x += PADDING + SQUARE_SIDE_LENGTH;
-
-                newList.add(nextSquare);
             }
 
             x = PADDING;
             y += PADDING + SQUARE_SIDE_LENGTH;
         }
-
-        canvas.draw();
     }
 
-    public void setCurrentRowTo(int[] checkedCharacters) { //TODO: SET BACK TO PRIVATE AFTER TESTING
+    private void assembleArrayOfGraphicsTexts() {
+        int x = PADDING;
+        int y = PADDING;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                newSquareGraphicsText(x, y, i, j);
+                x += PADDING + SQUARE_SIDE_LENGTH;
+            }
+
+            x = PADDING;
+            y += PADDING + SQUARE_SIDE_LENGTH;
+        }
+    }
+
+    private void refreshGraphicsTextPositions() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                Rectangle square = squares[i][j];
+                GraphicsText label = squareLabels[i][j];
+                
+                double dx = square.getCenter().getX() - label.getCenter().getX();
+                double dy = square.getCenter().getY() - label.getCenter().getY();
+
+                label.moveBy(dx, dy);
+            }
+        }
+    }
+
+    private void newSquare(int x, int y, int row, int column) {
+        Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
+        add(nextSquare);
+        
+
+        squares[row][column] = nextSquare;
+    }
+
+    private void newSquareGraphicsText(int x, int y, int row, int column) {
+        GraphicsText nextLabel = new GraphicsText("", x, y);
+        nextLabel.setFontSize(43);
+        add(nextLabel);
+
+        squareLabels[row][column] = nextLabel;
+    }
+
+    private void setCurrentRowTo(int[] checked) {
         // 0 = not in; 1 = in wrong position; 2 = in correct position
 
-        ArrayList<Rectangle> row = squares.get(guessNumber);
+        Rectangle[] row = squares[currentRow];
         for (int i = 0; i < 5; i++) {
-            Rectangle square = row.get(i);
-            switch (checkedCharacters[i]) {
+            squareLabels[currentRow][i].setFillColor(Color.WHITE);
+            Rectangle square = row[i];
+            switch (checked[i]) {
                 case 0:
                     square.setFillColor(NOT_IN_COLOR);
                     square.setStrokeColor(NOT_IN_COLOR);
@@ -101,8 +215,7 @@ public class WerdillUI extends GraphicsGroup {
                     break;
             }
         }
-
-        guessNumber += 1;
+        
         canvas.draw();
     }
 
