@@ -9,17 +9,18 @@ import java.awt.Color;
 import edu.macalester.graphics.events.Key;
 
 public class WerdillUI extends GraphicsGroup {
-    private static final Color BACKGROUND_COLOR = new Color(0xffffff);
+    /* these constants may or may not be used in final version: */
+        // private static final Color BACKGROUND_COLOR = new Color(0xffffff);
 
-    private static final Color BASE_COLOR = Color.WHITE;
-    private static final Color SELECTED_COLOR = Color.LIGHT_GRAY;
+        // private static final Color BASE_COLOR = Color.WHITE;
+        // private static final Color SELECTED_COLOR = Color.LIGHT_GRAY;
+
+        // private static final Color WRONG_RIGHT_TEXT_COLOR = new Color(0xffffff);
+        // private static final Color NOT_IN_AND_BASE_TEXT_COLOR = new Color(0xffffff);
 
     private static final Color NOT_IN_COLOR = Color.GRAY;//new Color(0xafafaf);
     private static final Color WRONG_POSITION_COLOR = new Color(0xffc900);
     private static final Color RIGHT_POSITION_COLOR = new Color(0x049c00);
-
-    private static final Color WRONG_RIGHT_TEXT_COLOR = new Color(0xffffff);
-    private static final Color NOT_IN_AND_BASE_TEXT_COLOR = new Color(0xffffff);
 
     private static final int SQUARE_SIDE_LENGTH = 60;
     private static final int PADDING = 10;
@@ -43,9 +44,12 @@ public class WerdillUI extends GraphicsGroup {
             } 
             if (key == Key.DELETE_OR_BACKSPACE) {
                 GraphicsText label = squareLabels[currentRow][currentColumn];
-                label.setText("");
+                if (label.getText() == "") {
+                    shiftColumnLeft();
+                } else {
+                    label.setText("");
+                }
                 refreshGraphicsTextPositions();
-                shiftColumnLeft();
             } else if (key == Key.LEFT_ARROW) {
                 shiftColumnLeft();
             } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
@@ -109,15 +113,11 @@ public class WerdillUI extends GraphicsGroup {
     }
 
     private void setSelected() {
-        // squares[currentRow][currentColumn].setStrokeColor(Color.RED);
         squares[currentRow][currentColumn].setStrokeWidth(PADDING/2);
-        squares[currentRow][currentColumn].setFillColor(SELECTED_COLOR);
     }
     
     private void setUnselected() {
-        // squares[currentRow][currentColumn].setStrokeColor(Color.BLACK);
         squares[currentRow][currentColumn].setStrokeWidth(1);
-        squares[currentRow][currentColumn].setFillColor(BASE_COLOR);
     }
 
     public void reset() {
@@ -188,13 +188,20 @@ public class WerdillUI extends GraphicsGroup {
         squareLabels[row][column] = nextLabel;
     }
 
-    private void setCurrentRowTo(int[] checked) {
+    private void setCurrentRowTo(int[] checked) { //TODO: is this method a bit long?
         // 0 = not in; 1 = in wrong position; 2 = in correct position
 
         Rectangle[] row = squares[currentRow];
         for (int i = 0; i < 5; i++) {
-            squareLabels[currentRow][i].setFillColor(Color.WHITE);
+            GraphicsText label = squareLabels[currentRow][i];
+            label.setFillColor(Color.WHITE);
+
             Rectangle square = row[i];
+
+            remove(square);
+            canvas.draw();
+
+            canvas.pause(34);
             switch (checked[i]) {
                 case 0:
                     square.setFillColor(NOT_IN_COLOR);
@@ -214,9 +221,12 @@ public class WerdillUI extends GraphicsGroup {
                 default:
                     break;
             }
-        }
-        
-        canvas.draw();
-    }
 
+            add(square);
+            add(label);
+            canvas.draw();
+
+            canvas.pause(166);
+        }
+    }
 }

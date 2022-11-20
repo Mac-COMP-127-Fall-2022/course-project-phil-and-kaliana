@@ -12,7 +12,7 @@ public class Checker {
     }
 
     public void setSolution(String newSolution) {
-        solution = newSolution.split("");
+        solution = newSolution.toUpperCase().split("");
     }
 
     public Checker(String solution) {

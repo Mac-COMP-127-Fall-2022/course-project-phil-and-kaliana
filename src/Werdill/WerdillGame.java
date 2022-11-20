@@ -16,14 +16,13 @@ public class WerdillGame {
     private final List<String> words;
     private final WerdillUI ui;
     private final Checker checker;
-    // private final Checker checker; // commented out during UI dev
 
     private final CanvasWindow canvas;
 
     WerdillGame() throws IOException {
         words = Files.lines(Path.of(WORD_LIST_PATH)).toList();
 
-        checker = new Checker("WORLD");
+        checker = new Checker(chooseSolution());
 
         canvas = new CanvasWindow("Werdill", CANVAS_HEIGHT, CANVAS_WIDTH);
         ui = new WerdillUI(canvas, checker);
@@ -32,7 +31,7 @@ public class WerdillGame {
     }
 
     private String chooseSolution() {
-        return null;
+        return "world";
     }
 
     public List<String> getWords() {
@@ -40,6 +39,6 @@ public class WerdillGame {
     }
     
     public static void main(String[] args) throws IOException {
-        WerdillGame game = new WerdillGame();
+        new WerdillGame();
     }
 }
