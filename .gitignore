@@ -40,3 +40,7 @@ gradle-app.setting
 .vscode/*
 !.vscode/settings.json
 bin
+
+# word list backups
+words_*.json
+4words_*.json
