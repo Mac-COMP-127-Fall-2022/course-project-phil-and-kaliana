@@ -24,7 +24,6 @@ public class Checker {
     }
 
     public void setSolution(String newSolution) { // NOTE: switch to private if not unit testing
-        // System.out.println(newSolution);
         solution = newSolution.toUpperCase().split("");
     }
 
@@ -39,7 +38,7 @@ public class Checker {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
         // FOR TESTING, CHANGE AND UNCOMMENT BELOW LINE:
-        setSolution("adapt");
+        // setSolution("adapt");
 
         System.out.println(Arrays.toString(solution));
     }
@@ -50,9 +49,13 @@ public class Checker {
 
     public Integer[] check(String[] guess) {
         //TODO: Check is in word list
-        // if (!words.contains(guess.toString().toLowerCase())) {
-        //     return null;
-        // }
+        String guessString = "";
+        for (String ltr : guess) {
+            guessString += ltr.toLowerCase();
+        }
+        if (!words.contains(guessString)) {
+            return null;
+        }
 
         ArrayList<String> solutionCopy = new ArrayList<>(Arrays.asList(solution));
 

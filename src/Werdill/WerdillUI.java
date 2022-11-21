@@ -23,12 +23,16 @@ public class WerdillUI extends GraphicsGroup {
     private static final Color RIGHT_POSITION_COLOR = new Color(0x049c00);
 
     private static final int SQUARE_SIDE_LENGTH = 60;
-    private static final int PADDING = 10;
+    private static final int SQUARE_PADDING = 10;
+
+    private static final double KEY_PADDING = SQUARE_PADDING / 2;
+    private static final double KEY_SIDE_LENGTH = ((SQUARE_SIDE_LENGTH + SQUARE_PADDING) * 5.0 - KEY_PADDING * 9) / 10;
 
     private int currentRow;
     private int currentColumn;
     private final Rectangle[][] squares = new Rectangle[6][5];
     private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
+    private final Rectangle[][] keyboard = new Rectangle[3][];
 
     private final CanvasWindow canvas;
     private final Checker checker;
@@ -45,11 +49,11 @@ public class WerdillUI extends GraphicsGroup {
             } 
             if (key == Key.DELETE_OR_BACKSPACE) {
                 GraphicsText label = squareLabels[currentRow][currentColumn];
-                if (label.getText() == "") {
+                // if (label.getText() == "") {
                     shiftColumnLeft();
-                } else {
+                // } else {
                     label.setText("");
-                }
+                // }
                 refreshGraphicsTextPositions();
             } else if (key == Key.LEFT_ARROW) {
                 shiftColumnLeft();
@@ -64,6 +68,7 @@ public class WerdillUI extends GraphicsGroup {
         });
 
         reset();
+        setPosition(canvas.getWidth()/2 - getWidth()/2 - SQUARE_PADDING, canvas.getHeight()/2 - getHeight()/2 - SQUARE_PADDING);
     }
 
     private void sumbitGuess() {
@@ -123,7 +128,7 @@ public class WerdillUI extends GraphicsGroup {
     }
 
     private void setSelected() {
-        squares[currentRow][currentColumn].setStrokeWidth(PADDING/2);
+        squares[currentRow][currentColumn].setStrokeWidth(SQUARE_PADDING/2);
     }
     
     private void setUnselected() {
@@ -141,30 +146,58 @@ public class WerdillUI extends GraphicsGroup {
     }
 
     private void assembleArrayOfSquares() {
-        int x = PADDING;
-        int y = PADDING;
+        int x = SQUARE_PADDING;
+        int y = SQUARE_PADDING;
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 newSquare(x, y, i, j);
-                x += PADDING + SQUARE_SIDE_LENGTH;
+                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
             }
 
-            x = PADDING;
-            y += PADDING + SQUARE_SIDE_LENGTH;
+            x = SQUARE_PADDING;
+            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
         }
     }
 
     private void assembleArrayOfGraphicsTexts() {
-        int x = PADDING;
-        int y = PADDING;
+        int x = SQUARE_PADDING;
+        int y = SQUARE_PADDING;
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 newSquareGraphicsText(x, y, i, j);
-                x += PADDING + SQUARE_SIDE_LENGTH;
+                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
             }
 
-            x = PADDING;
-            y += PADDING + SQUARE_SIDE_LENGTH;
+            x = SQUARE_PADDING;
+            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
+        }
+    }
+
+    private void assembleArrayOfKeyRectangles() { //TODO: NOT IMPLEMENTED
+        double x = 0;
+        double y = (SQUARE_PADDING + SQUARE_SIDE_LENGTH) * 6 + KEY_PADDING + KEY_SIDE_LENGTH;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                // newSquare(x, y, i, j);
+                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
+            }
+
+            x = SQUARE_PADDING;
+            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
+        }
+    }
+
+    private void assembleArrayOfKeyGraphicsTexts() { //TODO: NOT IMPLEMENTED
+        int x = SQUARE_PADDING;
+        int y = SQUARE_PADDING;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                newSquareGraphicsText(x, y, i, j);
+                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
+            }
+
+            x = SQUARE_PADDING;
+            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
         }
     }
 

@@ -20,7 +20,7 @@ public class WerdillGame {
 
         checker = new Checker();
 
-        canvas = new CanvasWindow("Werdill", CANVAS_HEIGHT, CANVAS_WIDTH);
+        canvas = new CanvasWindow("Werdill", CANVAS_WIDTH, CANVAS_HEIGHT);
         ui = new WerdillUI(canvas, checker);
         
         canvas.add(ui);
