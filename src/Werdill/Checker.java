@@ -38,6 +38,9 @@ public class Checker {
     private void chooseSolution() {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
+        // FOR TESTING, CHANGE AND UNCOMMENT BELOW LINE:
+        setSolution("adapt");
+
         System.out.println(Arrays.toString(solution));
     }
 
@@ -53,21 +56,22 @@ public class Checker {
 
         ArrayList<String> solutionCopy = new ArrayList<>(Arrays.asList(solution));
 
-        Integer[] ret = new Integer[5];
-        // <testVersion>
+        Integer[] ret = new Integer[]{0, 0, 0, 0, 0};
+        // <testVersion>\
         for (int i = 0; i < 5; i++) {
             if (guess[i].equals(solutionCopy.get(i))) {
                 ret[i] = 2;
-                // guess[i] = "";
+                guess[i] = "";
                 solutionCopy.set(i, "") ;//= "";
-                continue;
-            } 
-            if (solutionCopy.contains(guess[i])) {
-                ret[i] = 1;
-                solutionCopy.set(i, "") ;//= "";
-                continue;
             }
-            ret[i] = 0;
+        }
+        for (int i = 0; i < 5; i++) {
+            if (solutionCopy.contains(guess[i]) && ret[i] == 0) {
+                ret[i] = 1;
+                solutionCopy.remove(solutionCopy.indexOf(guess[i])) ;//= "";
+                guess[i] = "";
+            }
+            // ret[i] = 0;
             // guess[i] = "";
         }
         // </testVersion>
