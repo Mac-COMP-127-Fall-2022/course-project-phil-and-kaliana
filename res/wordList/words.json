@@ -264,7 +264,9 @@
     "isSolution": false
   },
   "acers": {},
-  "aceta": {},
+  "aceta": {
+    "isSolution": false
+  },
   "achar": {
     "frequencyScore": 2415,
     "isSolution": false
@@ -684,7 +686,9 @@
     "frequencyScore": 2444,
     "isSolution": true
   },
-  "agers": {},
+  "agers": {
+    "isSolution": false
+  },
   "agger": {
     "frequencyScore": 2792,
     "isSolution": false
@@ -704,7 +708,9 @@
     "frequencyScore": 1962,
     "isSolution": false
   },
-  "aghas": {},
+  "aghas": {
+    "isSolution": false
+  },
   "agila": {},
   "agile": {
     "frequencyScore": 3144,
@@ -949,7 +955,9 @@
     "frequencyScore": 2271,
     "isSolution": false
   },
-  "ajies": {},
+  "ajies": {
+    "isSolution": false
+  },
   "ajiva": {
     "isSolution": false
   },
@@ -2013,7 +2021,9 @@
     "frequencyScore": 3421,
     "isSolution": false
   },
-  "areas": {},
+  "areas": {
+    "isSolution": false
+  },
   "areca": {},
   "aredd": {},
   "arede": {},
@@ -2684,7 +2694,9 @@
     "frequencyScore": 2820,
     "isSolution": true
   },
-  "avale": {},
+  "avale": {
+    "isSolution": false
+  },
   "avant": {},
   "avast": {
     "frequencyScore": 2695,
@@ -2920,7 +2932,9 @@
     "isSolution": false
   },
   "ayres": {},
-  "ayrie": {},
+  "ayrie": {
+    "isSolution": false
+  },
   "azans": {},
   "azide": {
     "frequencyScore": 2840,
@@ -3333,7 +3347,9 @@
     "frequencyScore": 4251,
     "isSolution": false
   },
-  "barbs": {},
+  "barbs": {
+    "isSolution": false
+  },
   "barby": {},
   "barca": {},
   "barde": {},
@@ -3562,7 +3578,9 @@
     "isSolution": false
   },
   "bauds": {},
-  "bauks": {},
+  "bauks": {
+    "isSolution": false
+  },
   "baulk": {},
   "bauno": {
     "frequencyScore": 3317,
@@ -3785,7 +3803,9 @@
     "frequencyScore": 3582,
     "isSolution": true
   },
-  "beeps": {},
+  "beeps": {
+    "isSolution": true
+  },
   "beers": {
     "isSolution": false
   },
@@ -4318,7 +4338,9 @@
     "frequencyScore": 3375,
     "isSolution": false
   },
-  "biffo": {},
+  "biffo": {
+    "isSolution": false
+  },
   "biffs": {},
   "biffy": {},
   "bifid": {
@@ -4555,7 +4577,9 @@
     "isSolution": false
   },
   "blaer": {},
-  "blaes": {},
+  "blaes": {
+    "isSolution": false
+  },
   "blaff": {
     "frequencyScore": 2198,
     "isSolution": false
@@ -4663,7 +4687,9 @@
     "frequencyScore": 2903,
     "isSolution": false
   },
-  "blert": {},
+  "blert": {
+    "isSolution": false
+  },
   "bless": {
     "frequencyScore": 2539,
     "isSolution": true
@@ -5106,7 +5132,8 @@
     "frequencyScore": 3307
   },
   "boots": {
-    "frequencyScore": 3303
+    "frequencyScore": 3303,
+    "isSolution": false
   },
   "booty": {
     "frequencyScore": 4188
@@ -5247,7 +5274,9 @@
     "frequencyScore": 3012,
     "isSolution": false
   },
-  "bouts": {},
+  "bouts": {
+    "isSolution": false
+  },
   "bovid": {
     "frequencyScore": 3101
   },
@@ -5279,7 +5308,9 @@
     "frequencyScore": 3660
   },
   "bowne": {},
-  "bowrs": {},
+  "bowrs": {
+    "isSolution": false
+  },
   "bowse": {
     "isSolution": false
   },
@@ -5802,7 +5833,9 @@
   "bunny": {
     "frequencyScore": 3712
   },
-  "bunts": {},
+  "bunts": {
+    "isSolution": false
+  },
   "bunty": {
     "frequencyScore": 3670
   },
@@ -5867,13 +5900,15 @@
   },
   "burrs": {},
   "burry": {
-    "frequencyScore": 3907
+    "frequencyScore": 3907,
+    "isSolution": false
   },
   "bursa": {
     "frequencyScore": 3311
   },
   "burse": {
-    "frequencyScore": 3889
+    "frequencyScore": 3889,
+    "isSolution": false
   },
   "burst": {
     "frequencyScore": 3310
@@ -5889,7 +5924,8 @@
     "frequencyScore": 2045
   },
   "bushy": {
-    "frequencyScore": 3080
+    "frequencyScore": 3080,
+    "isSolution": true
   },
   "busks": {},
   "busky": {
@@ -5986,7 +6022,8 @@
     "frequencyScore": 3209
   },
   "caber": {
-    "frequencyScore": 4159
+    "frequencyScore": 4159,
+    "isSolution": false
   },
   "cabin": {
     "frequencyScore": 3592,
@@ -6033,7 +6070,8 @@
   },
   "cadee": {},
   "cader": {
-    "frequencyScore": 4186
+    "frequencyScore": 4186,
+    "isSolution": false
   },
   "cades": {},
   "cadet": {
@@ -6225,7 +6263,9 @@
   "canna": {
     "frequencyScore": 3834
   },
-  "canns": {},
+  "canns": {
+    "isSolution": false
+  },
   "canny": {
     "frequencyScore": 4397
   },
@@ -6282,7 +6322,8 @@
     "frequencyScore": 3435
   },
   "cappy": {
-    "frequencyScore": 3722
+    "frequencyScore": 3722,
+    "isSolution": false
   },
   "capri": {
     "isSolution": false
@@ -6472,7 +6513,8 @@
   "cavas": {},
   "caved": {},
   "cavel": {
-    "frequencyScore": 3921
+    "frequencyScore": 3921,
+    "isSolution": false
   },
   "caver": {
     "isSolution": false
@@ -6549,7 +6591,9 @@
   "cello": {
     "frequencyScore": 2970
   },
-  "cells": {},
+  "cells": {
+    "isSolution": false
+  },
   "celom": {},
   "celts": {
     "isSolution": false
@@ -6632,7 +6676,8 @@
   "chado": {},
   "chads": {},
   "chafe": {
-    "frequencyScore": 3336
+    "frequencyScore": 3336,
+    "isSolution": true
   },
   "chaff": {
     "frequencyScore": 2154
@@ -6678,7 +6723,8 @@
     "frequencyScore": 2759
   },
   "chant": {
-    "frequencyScore": 3159
+    "frequencyScore": 3159,
+    "isSolution": true
   },
   "chaos": {
     "frequencyScore": 2808
@@ -6831,7 +6877,9 @@
   "chias": {},
   "chibs": {},
   "chica": {},
-  "chich": {},
+  "chich": {
+    "isSolution": false
+  },
   "chick": {
     "frequencyScore": 2452,
     "isSolution": true
@@ -6864,7 +6912,9 @@
   "chill": {
     "frequencyScore": 2828
   },
-  "chimb": {},
+  "chimb": {
+    "isSolution": false
+  },
   "chime": {
     "frequencyScore": 3310,
     "isSolution": true
@@ -6988,7 +7038,8 @@
     "frequencyScore": 2734
   },
   "chore": {
-    "frequencyScore": 3560
+    "frequencyScore": 3560,
+    "isSolution": true
   },
   "chort": {
     "frequencyScore": 2981
@@ -6996,7 +7047,9 @@
   "chose": {
     "frequencyScore": 3527
   },
-  "chota": {},
+  "chota": {
+    "isSolution": false
+  },
   "chott": {
     "frequencyScore": 2949
   },
@@ -7152,7 +7205,9 @@
     "isSolution": false
   },
   "cists": {},
-  "cital": {},
+  "cital": {
+    "isSolution": false
+  },
   "cited": {},
   "citee": {
     "frequencyScore": 4314
@@ -7202,7 +7257,8 @@
     "frequencyScore": 3529
   },
   "clamp": {
-    "frequencyScore": 2443
+    "frequencyScore": 2443,
+    "isSolution": true
   },
   "clams": {},
   "clang": {
@@ -7266,7 +7322,8 @@
     "frequencyScore": 3027
   },
   "cleam": {
-    "frequencyScore": 2791
+    "frequencyScore": 2791,
+    "isSolution": false
   },
   "clean": {
     "frequencyScore": 3139
@@ -7424,7 +7481,8 @@
   },
   "clous": {},
   "clout": {
-    "frequencyScore": 2901
+    "frequencyScore": 2901,
+    "isSolution": true
   },
   "clove": {
     "frequencyScore": 3244
@@ -7552,7 +7610,9 @@
   "codon": {
     "frequencyScore": 3092
   },
-  "coeds": {},
+  "coeds": {
+    "isSolution": false
+  },
   "coffs": {},
   "cogie": {},
   "cogon": {
@@ -7725,7 +7785,8 @@
     "isSolution": true
   },
   "cooee": {
-    "frequencyScore": 4941
+    "frequencyScore": 4941,
+    "isSolution": false
   },
   "cooer": {
     "frequencyScore": 4339
@@ -7816,7 +7877,8 @@
     "frequencyScore": 3987
   },
   "coram": {
-    "frequencyScore": 3656
+    "frequencyScore": 3656,
+    "isSolution": false
   },
   "corbe": {},
   "corby": {},
@@ -8072,7 +8134,9 @@
   "crank": {
     "frequencyScore": 2982
   },
-  "crans": {},
+  "crans": {
+    "isSolution": false
+  },
   "crape": {
     "frequencyScore": 3654
   },
@@ -8197,7 +8261,8 @@
     "frequencyScore": 3782
   },
   "crime": {
-    "frequencyScore": 3533
+    "frequencyScore": 3533,
+    "isSolution": true
   },
   "crimp": {
     "frequencyScore": 2447
@@ -8745,7 +8810,8 @@
   },
   "danks": {},
   "danli": {
-    "frequencyScore": 3099
+    "frequencyScore": 3099,
+    "isSolution": false
   },
   "danny": {
     "isSolution": false
@@ -8934,7 +9000,9 @@
     "isSolution": true
   },
   "debts": {},
-  "debud": {},
+  "debud": {
+    "isSolution": false
+  },
   "debug": {},
   "debur": {},
   "debus": {
@@ -8984,7 +9052,8 @@
     "frequencyScore": 2378
   },
   "decyl": {
-    "frequencyScore": 2244
+    "frequencyScore": 2244,
+    "isSolution": false
   },
   "dedal": {},
   "deeds": {},
@@ -9229,7 +9298,9 @@
     "frequencyScore": 3516
   },
   "devas": {},
-  "devel": {},
+  "devel": {
+    "isSolution": false
+  },
   "devil": {
     "frequencyScore": 2837,
     "isSolution": true
@@ -9276,7 +9347,9 @@
     "frequencyScore": 3307
   },
   "dholl": {},
-  "dhols": {},
+  "dhols": {
+    "isSolution": false
+  },
   "dhoni": {
     "frequencyScore": 2268
   },
@@ -9458,7 +9531,9 @@
   },
   "dippy": {},
   "dipso": {},
-  "diram": {},
+  "diram": {
+    "isSolution": false
+  },
   "direr": {},
   "dirge": {
     "frequencyScore": 3522
@@ -9653,14 +9728,17 @@
   "dolly": {
     "frequencyScore": 3777
   },
-  "dolma": {},
+  "dolma": {
+    "isSolution": false
+  },
   "dolor": {
     "frequencyScore": 3171
   },
   "dolos": {},
   "dolts": {},
   "domal": {
-    "frequencyScore": 3244
+    "frequencyScore": 3244,
+    "isSolution": false
   },
   "domba": {
     "frequencyScore": 2674
@@ -9714,7 +9792,8 @@
   "dooce": {},
   "doody": {},
   "dooja": {
-    "frequencyScore": 2927
+    "frequencyScore": 2927,
+    "isSolution": false
   },
   "dooks": {},
   "doole": {},
@@ -9837,7 +9916,9 @@
   "douma": {},
   "doums": {},
   "doups": {},
-  "doura": {},
+  "doura": {
+    "isSolution": false
+  },
   "douse": {
     "frequencyScore": 3726
   },
@@ -9884,7 +9965,8 @@
     "frequencyScore": 3416
   },
   "dowse": {
-    "frequencyScore": 3398
+    "frequencyScore": 3398,
+    "isSolution": false
   },
   "dowts": {},
   "doxed": {},
@@ -10052,7 +10134,9 @@
     "isSolution": false
   },
   "droke": {},
-  "drole": {},
+  "drole": {
+    "isSolution": false
+  },
   "droll": {
     "frequencyScore": 2799
   },
@@ -10191,7 +10275,8 @@
   "duffs": {},
   "dufus": {},
   "dugal": {
-    "frequencyScore": 2768
+    "frequencyScore": 2768,
+    "isSolution": false
   },
   "duhat": {
     "frequencyScore": 2764
@@ -10379,7 +10464,8 @@
     "frequencyScore": 2110
   },
   "dwelt": {
-    "frequencyScore": 2262
+    "frequencyScore": 2262,
+    "isSolution": false
   },
   "dwile": {},
   "dwine": {
@@ -10390,7 +10476,8 @@
   },
   "dyers": {},
   "dying": {
-    "frequencyScore": 1839
+    "frequencyScore": 1839,
+    "isSolution": true
   },
   "dyked": {},
   "dyker": {
@@ -10561,7 +10648,9 @@
     "frequencyScore": 3135,
     "isSolution": false
   },
-  "eidos": {},
+  "eidos": {
+    "isSolution": false
+  },
   "eight": {
     "frequencyScore": 2062
   },
@@ -10612,7 +10701,8 @@
     "isSolution": false
   },
   "elect": {
-    "frequencyScore": 2331
+    "frequencyScore": 2331,
+    "isSolution": true
   },
   "elegy": {
     "frequencyScore": 2802
@@ -10637,7 +10727,8 @@
   },
   "elmen": {},
   "eloge": {
-    "frequencyScore": 2949
+    "frequencyScore": 2949,
+    "isSolution": false
   },
   "elogy": {},
   "eloin": {},
@@ -10666,7 +10757,8 @@
   },
   "elven": {},
   "elver": {
-    "frequencyScore": 2716
+    "frequencyScore": 2716,
+    "isSolution": false
   },
   "elves": {
     "frequencyScore": 2418
@@ -10747,7 +10839,9 @@
     "frequencyScore": 2278
   },
   "emule": {},
-  "emure": {},
+  "emure": {
+    "isSolution": false
+  },
   "emyde": {},
   "emyds": {},
   "enact": {
@@ -10882,7 +10976,9 @@
   "ephah": {
     "frequencyScore": 1709
   },
-  "ephas": {},
+  "ephas": {
+    "isSolution": false
+  },
   "ephod": {
     "frequencyScore": 1385
   },
@@ -10977,7 +11073,8 @@
     "isSolution": false
   },
   "eruca": {
-    "frequencyScore": 2405
+    "frequencyScore": 2405,
+    "isSolution": false
   },
   "eruct": {
     "frequencyScore": 2404,
@@ -11005,7 +11102,9 @@
   "esker": {
     "frequencyScore": 2277
   },
-  "esnes": {},
+  "esnes": {
+    "isSolution": false
+  },
   "essay": {
     "frequencyScore": 2739,
     "isSolution": true
@@ -11015,7 +11114,8 @@
   },
   "esses": {},
   "ester": {
-    "frequencyScore": 2560
+    "frequencyScore": 2560,
+    "isSolution": true
   },
   "estoc": {
     "frequencyScore": 1334,
@@ -11114,7 +11214,9 @@
   },
   "evils": {},
   "evite": {},
-  "evohe": {},
+  "evohe": {
+    "isSolution": false
+  },
   "evoke": {
     "frequencyScore": 2402
   },
@@ -11211,7 +11313,9 @@
   "eying": {
     "frequencyScore": 1651
   },
-  "eyots": {},
+  "eyots": {
+    "isSolution": false
+  },
   "eyoty": {
     "frequencyScore": 2731
   },
@@ -11314,7 +11418,8 @@
   },
   "faked": {},
   "faker": {
-    "frequencyScore": 3765
+    "frequencyScore": 3765,
+    "isSolution": true
   },
   "fakes": {},
   "fakey": {},
@@ -11635,7 +11740,9 @@
   "fetal": {
     "frequencyScore": 3217
   },
-  "fetas": {},
+  "fetas": {
+    "isSolution": false
+  },
   "fetch": {
     "frequencyScore": 2549
   },
@@ -11701,7 +11808,9 @@
   "fibry": {
     "frequencyScore": 3161
   },
-  "fices": {},
+  "fices": {
+    "isSolution": false
+  },
   "fiche": {
     "frequencyScore": 2789
   },
@@ -11898,7 +12007,9 @@
   "fixer": {
     "frequencyScore": 3070
   },
-  "fixes": {},
+  "fixes": {
+    "isSolution": true
+  },
   "fixit": {},
   "fizzy": {
     "frequencyScore": 2555,
@@ -12089,7 +12200,8 @@
   },
   "flops": {},
   "flora": {
-    "frequencyScore": 2758
+    "frequencyScore": 2758,
+    "isSolution": true
   },
   "flors": {},
   "flory": {
@@ -12151,7 +12263,8 @@
     "frequencyScore": 1769
   },
   "flung": {
-    "frequencyScore": 1978
+    "frequencyScore": 1978,
+    "isSolution": true
   },
   "flunk": {
     "frequencyScore": 2136,
@@ -12195,7 +12308,8 @@
   },
   "foams": {},
   "foamy": {
-    "frequencyScore": 3870
+    "frequencyScore": 3870,
+    "isSolution": true
   },
   "focal": {
     "frequencyScore": 3143
@@ -12396,7 +12510,9 @@
   "fouer": {},
   "fouet": {},
   "foule": {},
-  "fouls": {},
+  "fouls": {
+    "isSolution": true
+  },
   "found": {
     "frequencyScore": 2920
   },
@@ -12474,7 +12590,8 @@
   "frati": {},
   "frats": {},
   "fraud": {
-    "frequencyScore": 2719
+    "frequencyScore": 2719,
+    "isSolution": true
   },
   "fraus": {},
   "frawn": {
@@ -12494,7 +12611,8 @@
     "frequencyScore": 2688
   },
   "freck": {
-    "frequencyScore": 2268
+    "frequencyScore": 2268,
+    "isSolution": false
   },
   "freed": {
     "frequencyScore": 3249
@@ -12561,7 +12679,9 @@
     "frequencyScore": 2580,
     "isSolution": false
   },
-  "frits": {},
+  "frits": {
+    "isSolution": false
+  },
   "fritt": {
     "frequencyScore": 2897
   },
@@ -12573,7 +12693,8 @@
     "isSolution": false
   },
   "frizz": {
-    "frequencyScore": 1861
+    "frequencyScore": 1861,
+    "isSolution": true
   },
   "frock": {
     "frequencyScore": 2400
@@ -12673,7 +12794,8 @@
     "frequencyScore": 2536
   },
   "fugal": {
-    "frequencyScore": 2745
+    "frequencyScore": 2745,
+    "isSolution": true
   },
   "fuggy": {
     "frequencyScore": 2865
@@ -12814,7 +12936,9 @@
   "fyked": {
     "isSolution": false
   },
-  "fykes": {},
+  "fykes": {
+    "isSolution": false
+  },
   "fyles": {
     "isSolution": false
   },
@@ -12925,7 +13049,9 @@
   "gamed": {},
   "gamer": {},
   "games": {},
-  "gamey": {},
+  "gamey": {
+    "isSolution": true
+  },
   "gamic": {
     "frequencyScore": 3015
   },
@@ -13035,7 +13161,9 @@
   "gashy": {
     "frequencyScore": 3529
   },
-  "gasps": {},
+  "gasps": {
+    "isSolution": true
+  },
   "gaspy": {
     "frequencyScore": 3595
   },
@@ -13269,7 +13397,9 @@
     "frequencyScore": 3152
   },
   "gerle": {},
-  "germs": {},
+  "germs": {
+    "isSolution": false
+  },
   "germy": {
     "frequencyScore": 3729
   },
@@ -14323,7 +14453,9 @@
   "guest": {
     "frequencyScore": 2847
   },
-  "guffs": {},
+  "guffs": {
+    "isSolution": false
+  },
   "guffy": {
     "frequencyScore": 2575
   },
@@ -14380,7 +14512,9 @@
     "frequencyScore": 3193
   },
   "gulet": {},
-  "gulfs": {},
+  "gulfs": {
+    "isSolution": false
+  },
   "gulfy": {
     "frequencyScore": 2987,
     "isSolution": false
@@ -14395,7 +14529,9 @@
   "gulph": {
     "isSolution": false
   },
-  "gulps": {},
+  "gulps": {
+    "isSolution": true
+  },
   "gulpy": {
     "frequencyScore": 3082
   },
@@ -14465,7 +14601,8 @@
     "frequencyScore": 2650
   },
   "gusle": {
-    "frequencyScore": 3228
+    "frequencyScore": 3228,
+    "isSolution": false
   },
   "gusli": {
     "isSolution": false
@@ -14657,7 +14794,9 @@
     "frequencyScore": 2753,
     "isSolution": false
   },
-  "hakus": {},
+  "hakus": {
+    "isSolution": false
+  },
   "halal": {
     "frequencyScore": 3579
   },
@@ -14815,7 +14954,9 @@
     "frequencyScore": 3457,
     "isSolution": false
   },
-  "hasps": {},
+  "hasps": {
+    "isSolution": false
+  },
   "hasta": {
     "frequencyScore": 3161,
     "isSolution": false
@@ -14896,7 +15037,9 @@
   "hayed": {
     "isSolution": false
   },
-  "hayer": {},
+  "hayer": {
+    "isSolution": false
+  },
   "hayey": {
     "frequencyScore": 4221
   },
@@ -14998,7 +15141,9 @@
     "frequencyScore": 2935,
     "isSolution": false
   },
-  "heids": {},
+  "heids": {
+    "isSolution": false
+  },
   "heigh": {
     "frequencyScore": 2638
   },
@@ -15251,7 +15396,8 @@
     "frequencyScore": 2739
   },
   "hired": {
-    "frequencyScore": 3497
+    "frequencyScore": 3497,
+    "isSolution": true
   },
   "hiree": {},
   "hirer": {
@@ -15321,7 +15467,9 @@
   "hogan": {
     "frequencyScore": 3080
   },
-  "hogen": {},
+  "hogen": {
+    "isSolution": false
+  },
   "hoggs": {},
   "hoggy": {
     "frequencyScore": 3183,
@@ -15622,7 +15770,9 @@
   "hucho": {
     "frequencyScore": 1665
   },
-  "hucks": {},
+  "hucks": {
+    "isSolution": true
+  },
   "hudna": {},
   "hudud": {},
   "huers": {},
@@ -15750,7 +15900,9 @@
   "hying": {
     "frequencyScore": 1719
   },
-  "hykes": {},
+  "hykes": {
+    "isSolution": false
+  },
   "hylas": {},
   "hyleg": {
     "frequencyScore": 2211
@@ -15768,7 +15920,8 @@
     "frequencyScore": 2468
   },
   "hyoid": {
-    "frequencyScore": 2264
+    "frequencyScore": 2264,
+    "isSolution": false
   },
   "hyped": {},
   "hyper": {
@@ -16048,7 +16201,9 @@
   "index": {
     "frequencyScore": 2035
   },
-  "india": {},
+  "india": {
+    "isSolution": false
+  },
   "indic": {
     "frequencyScore": 1661
   },
@@ -16172,7 +16327,8 @@
   "inspo": {},
   "intel": {},
   "inter": {
-    "frequencyScore": 2760
+    "frequencyScore": 2760,
+    "isSolution": true
   },
   "intil": {
     "frequencyScore": 2176
@@ -16329,7 +16485,9 @@
     "frequencyScore": 2257
   },
   "jacks": {},
-  "jacky": {},
+  "jacky": {
+    "isSolution": true
+  },
   "jaded": {
     "frequencyScore": 3440
   },
@@ -16388,7 +16546,9 @@
   },
   "jamon": {},
   "janes": {},
-  "janns": {},
+  "janns": {
+    "isSolution": false
+  },
   "janny": {},
   "jantu": {
     "frequencyScore": 2653
@@ -16538,7 +16698,9 @@
     "frequencyScore": 2287
   },
   "jiaos": {},
-  "jibba": {},
+  "jibba": {
+    "isSolution": false
+  },
   "jibbs": {
     "isSolution": false
   },
@@ -16547,7 +16709,9 @@
   },
   "jibed": {},
   "jiber": {},
-  "jibes": {},
+  "jibes": {
+    "isSolution": true
+  },
   "jiboa": {
     "frequencyScore": 2331
   },
@@ -16710,12 +16874,15 @@
   "jowar": {
     "frequencyScore": 2933
   },
-  "jowed": {},
+  "jowed": {
+    "isSolution": false
+  },
   "jowel": {
     "frequencyScore": 3129
   },
   "jower": {
-    "frequencyScore": 3258
+    "frequencyScore": 3258,
+    "isSolution": false
   },
   "jowls": {
     "isSolution": false
@@ -16732,7 +16899,8 @@
     "isSolution": false
   },
   "jubbe": {
-    "frequencyScore": 2513
+    "frequencyScore": 2513,
+    "isSolution": false
   },
   "jubes": {},
   "jucos": {},
@@ -16779,7 +16947,9 @@
   "julio": {
     "frequencyScore": 2392
   },
-  "jumar": {},
+  "jumar": {
+    "isSolution": false
+  },
   "jumba": {
     "frequencyScore": 1989
   },
@@ -16952,7 +17122,9 @@
     "frequencyScore": 3164
   },
   "kangs": {},
-  "kanji": {},
+  "kanji": {
+    "isSolution": false
+  },
   "kants": {
     "isSolution": false
   },
@@ -17046,7 +17218,9 @@
   "kauru": {},
   "kaury": {},
   "kaval": {},
-  "kavas": {},
+  "kavas": {
+    "isSolution": false
+  },
   "kawas": {},
   "kawau": {},
   "kawed": {},
@@ -17059,7 +17233,9 @@
   "kazoo": {
     "frequencyScore": 2450
   },
-  "kbars": {},
+  "kbars": {
+    "isSolution": false
+  },
   "keach": {
     "frequencyScore": 2833
   },
@@ -17108,7 +17284,8 @@
     "frequencyScore": 3191
   },
   "kefir": {
-    "frequencyScore": 2723
+    "frequencyScore": 2723,
+    "isSolution": false
   },
   "kehua": {},
   "keirs": {},
@@ -17136,7 +17313,8 @@
   },
   "kelps": {},
   "kelpy": {
-    "frequencyScore": 3181
+    "frequencyScore": 3181,
+    "isSolution": true
   },
   "kelts": {},
   "kelty": {
@@ -17148,7 +17326,8 @@
     "isSolution": false
   },
   "kempt": {
-    "frequencyScore": 2425
+    "frequencyScore": 2425,
+    "isSolution": true
   },
   "kempy": {
     "frequencyScore": 2989
@@ -17231,7 +17410,9 @@
     "frequencyScore": 1965,
     "isSolution": false
   },
-  "khafs": {},
+  "khafs": {
+    "isSolution": false
+  },
   "khair": {
     "frequencyScore": 2932
   },
@@ -17300,7 +17481,9 @@
   "kiefs": {
     "isSolution": false
   },
-  "kiers": {},
+  "kiers": {
+    "isSolution": false
+  },
   "kieve": {},
   "kievs": {},
   "kieye": {
@@ -17412,7 +17595,9 @@
     "isSolution": false
   },
   "kited": {},
-  "kiter": {},
+  "kiter": {
+    "isSolution": false
+  },
   "kites": {},
   "kithe": {
     "frequencyScore": 2814
@@ -17469,12 +17654,15 @@
   "knave": {
     "frequencyScore": 2812
   },
-  "knawe": {},
+  "knawe": {
+    "isSolution": false
+  },
   "knead": {
     "frequencyScore": 2427
   },
   "kneed": {
-    "frequencyScore": 2752
+    "frequencyScore": 2752,
+    "isSolution": true
   },
   "kneel": {
     "frequencyScore": 2847
@@ -17785,7 +17973,9 @@
     "frequencyScore": 2610
   },
   "kuris": {},
-  "kurre": {},
+  "kurre": {
+    "isSolution": false
+  },
   "kurta": {},
   "kurus": {
     "frequencyScore": 2460
@@ -17989,7 +18179,8 @@
   },
   "lambs": {},
   "lamby": {
-    "frequencyScore": 3438
+    "frequencyScore": 3438,
+    "isSolution": false
   },
   "lamed": {},
   "lamel": {
@@ -18083,7 +18274,8 @@
   "larns": {},
   "larnt": {},
   "larry": {
-    "frequencyScore": 4278
+    "frequencyScore": 4278,
+    "isSolution": false
   },
   "larum": {},
   "larva": {
@@ -18113,7 +18305,8 @@
     "frequencyScore": 3782
   },
   "latah": {
-    "frequencyScore": 3390
+    "frequencyScore": 3390,
+    "isSolution": false
   },
   "latch": {
     "frequencyScore": 2887
@@ -18142,7 +18335,8 @@
   },
   "latke": {},
   "latro": {
-    "frequencyScore": 2952
+    "frequencyScore": 2952,
+    "isSolution": false
   },
   "latte": {},
   "latus": {
@@ -18404,7 +18598,9 @@
   "lenth": {
     "frequencyScore": 2783
   },
-  "lenti": {},
+  "lenti": {
+    "isSolution": false
+  },
   "lento": {
     "frequencyScore": 2719
   },
@@ -18526,11 +18722,15 @@
   "licks": {},
   "lidar": {},
   "lidos": {},
-  "liefs": {},
+  "liefs": {
+    "isSolution": false
+  },
   "liege": {
     "frequencyScore": 3226
   },
-  "liens": {},
+  "liens": {
+    "isSolution": false
+  },
   "liers": {},
   "liesh": {
     "frequencyScore": 2519
@@ -18924,7 +19124,8 @@
   "lomes": {},
   "loner": {},
   "longa": {
-    "frequencyScore": 3025
+    "frequencyScore": 3025,
+    "isSolution": false
   },
   "longe": {
     "frequencyScore": 3603
@@ -19011,14 +19212,18 @@
   "lotah": {
     "isSolution": false
   },
-  "lotas": {},
+  "lotas": {
+    "isSolution": false
+  },
   "lotes": {},
   "lotic": {
     "frequencyScore": 2784
   },
   "lotos": {},
   "lotsa": {},
-  "lotta": {},
+  "lotta": {
+    "isSolution": true
+  },
   "lotte": {},
   "lotto": {
     "frequencyScore": 2657,
@@ -19040,7 +19245,8 @@
   "louie": {},
   "louis": {},
   "loulu": {
-    "frequencyScore": 2501
+    "frequencyScore": 2501,
+    "isSolution": false
   },
   "louma": {},
   "lound": {
@@ -19189,7 +19395,9 @@
   "lungy": {
     "frequencyScore": 3173
   },
-  "lunks": {},
+  "lunks": {
+    "isSolution": false
+  },
   "lunts": {
     "isSolution": false
   },
@@ -19269,7 +19477,9 @@
     "frequencyScore": 2246
   },
   "lyart": {},
-  "lyase": {},
+  "lyase": {
+    "isSolution": false
+  },
   "lycea": {},
   "lycee": {},
   "lycid": {
@@ -19309,7 +19519,9 @@
     "frequencyScore": 1931
   },
   "lyted": {},
-  "lytes": {},
+  "lytes": {
+    "isSolution": false
+  },
   "lythe": {},
   "lytic": {
     "frequencyScore": 1760
@@ -19464,7 +19676,8 @@
   },
   "malas": {},
   "malax": {
-    "frequencyScore": 3258
+    "frequencyScore": 3258,
+    "isSolution": false
   },
   "maleo": {
     "frequencyScore": 3813
@@ -19618,7 +19831,8 @@
     "frequencyScore": 3799
   },
   "mappy": {
-    "frequencyScore": 3488
+    "frequencyScore": 3488,
+    "isSolution": false
   },
   "maqui": {
     "frequencyScore": 2401
@@ -19800,7 +20014,9 @@
   },
   "mauzy": {},
   "maven": {},
-  "mavie": {},
+  "mavie": {
+    "isSolution": false
+  },
   "mavin": {},
   "mavis": {
     "frequencyScore": 3063,
@@ -20025,7 +20241,8 @@
   },
   "merks": {},
   "merle": {
-    "frequencyScore": 3995
+    "frequencyScore": 3995,
+    "isSolution": false
   },
   "merls": {},
   "merop": {
@@ -20095,7 +20312,8 @@
   "metho": {},
   "meths": {},
   "metic": {
-    "frequencyScore": 2750
+    "frequencyScore": 2750,
+    "isSolution": false
   },
   "metif": {},
   "metis": {
@@ -20163,7 +20381,8 @@
   "micos": {},
   "micra": {},
   "micro": {
-    "frequencyScore": 2233
+    "frequencyScore": 2233,
+    "isSolution": true
   },
   "middy": {
     "frequencyScore": 2954
@@ -20191,7 +20410,9 @@
     "frequencyScore": 2268
   },
   "mihas": {},
-  "mihis": {},
+  "mihis": {
+    "isSolution": false
+  },
   "miked": {
     "isSolution": true
   },
@@ -20379,7 +20600,8 @@
     "frequencyScore": 2803
   },
   "mitre": {
-    "frequencyScore": 3381
+    "frequencyScore": 3381,
+    "isSolution": false
   },
   "mitts": {},
   "mitty": {
@@ -20570,7 +20792,9 @@
   "mongo": {},
   "mongs": {},
   "monic": {},
-  "monie": {},
+  "monie": {
+    "isSolution": false
+  },
   "monks": {},
   "monny": {
     "frequencyScore": 3900
@@ -20736,7 +20960,9 @@
   "motel": {
     "frequencyScore": 3697
   },
-  "moten": {},
+  "moten": {
+    "isSolution": false
+  },
   "moter": {
     "frequencyScore": 3826
   },
@@ -20868,7 +21094,8 @@
   },
   "mozos": {},
   "mpret": {
-    "frequencyScore": 3265
+    "frequencyScore": 3265,
+    "isSolution": false
   },
   "muang": {
     "frequencyScore": 2634
@@ -20910,13 +21137,16 @@
     "frequencyScore": 3876,
     "isSolution": false
   },
-  "mudge": {},
+  "mudge": {
+    "isSolution": false
+  },
   "mudir": {
     "frequencyScore": 2819,
     "isSolution": false
   },
   "mudra": {
-    "frequencyScore": 2599
+    "frequencyScore": 2599,
+    "isSolution": false
   },
   "muffs": {},
   "muffy": {
@@ -20935,7 +21165,9 @@
   },
   "muhly": {},
   "muids": {},
-  "muils": {},
+  "muils": {
+    "isSolution": false
+  },
   "muirs": {
     "isSolution": false
   },
@@ -20948,7 +21180,8 @@
     "isSolution": false
   },
   "mulch": {
-    "frequencyScore": 2371
+    "frequencyScore": 2371,
+    "isSolution": true
   },
   "mulct": {
     "frequencyScore": 2688
@@ -21203,7 +21436,8 @@
   "naffs": {},
   "nagas": {},
   "naggy": {
-    "frequencyScore": 3390
+    "frequencyScore": 3390,
+    "isSolution": true
   },
   "naght": {
     "frequencyScore": 2685
@@ -21211,7 +21445,9 @@
   "nagor": {
     "frequencyScore": 3005
   },
-  "nahal": {},
+  "nahal": {
+    "isSolution": false
+  },
   "naiad": {
     "frequencyScore": 3625
   },
@@ -21318,7 +21554,9 @@
   "naric": {
     "frequencyScore": 3314
   },
-  "naris": {},
+  "naris": {
+    "isSolution": false
+  },
   "narks": {},
   "narky": {
     "frequencyScore": 3865,
@@ -21356,7 +21594,8 @@
     "frequencyScore": 3597
   },
   "nathe": {
-    "frequencyScore": 3435
+    "frequencyScore": 3435,
+    "isSolution": false
   },
   "natis": {
     "isSolution": false
@@ -21524,7 +21763,8 @@
   },
   "netts": {},
   "netty": {
-    "frequencyScore": 3374
+    "frequencyScore": 3374,
+    "isSolution": false
   },
   "neuks": {},
   "neuma": {
@@ -21818,7 +22058,9 @@
     "frequencyScore": 2973,
     "isSolution": true
   },
-  "nomas": {},
+  "nomas": {
+    "isSolution": false
+  },
   "nomen": {},
   "nomes": {},
   "nomic": {
@@ -21866,7 +22108,9 @@
   "nooit": {
     "isSolution": false
   },
-  "nooks": {},
+  "nooks": {
+    "isSolution": false
+  },
   "nooky": {
     "frequencyScore": 3500
   },
@@ -22031,7 +22275,9 @@
   "nuque": {
     "frequencyScore": 2579
   },
-  "nurds": {},
+  "nurds": {
+    "isSolution": false
+  },
   "nurdy": {},
   "nurls": {},
   "nurly": {
@@ -22130,7 +22376,9 @@
     "frequencyScore": 2692
   },
   "oboli": {},
-  "obols": {},
+  "obols": {
+    "isSolution": false
+  },
   "occam": {},
   "occur": {
     "frequencyScore": 1590
@@ -22326,7 +22574,8 @@
   "oleum": {},
   "olios": {},
   "oliva": {
-    "frequencyScore": 2205
+    "frequencyScore": 2205,
+    "isSolution": false
   },
   "olive": {
     "frequencyScore": 2783
@@ -22498,12 +22747,15 @@
   },
   "orcas": {},
   "orcin": {
-    "frequencyScore": 2385
+    "frequencyScore": 2385,
+    "isSolution": false
   },
   "order": {
     "frequencyScore": 3003
   },
-  "ordos": {},
+  "ordos": {
+    "isSolution": false
+  },
   "oread": {
     "frequencyScore": 2738
   },
@@ -22649,7 +22901,9 @@
   "ourie": {
     "frequencyScore": 3712
   },
-  "ousel": {},
+  "ousel": {
+    "isSolution": false
+  },
   "ousts": {},
   "outby": {
     "frequencyScore": 2723
@@ -22699,7 +22953,9 @@
   "ovens": {
     "isSolution": false
   },
-  "overs": {},
+  "overs": {
+    "isSolution": false
+  },
   "overt": {
     "frequencyScore": 1969
   },
@@ -22855,7 +23111,9 @@
   "paean": {
     "frequencyScore": 3903
   },
-  "paedo": {},
+  "paedo": {
+    "isSolution": false
+  },
   "paeon": {
     "frequencyScore": 3509
   },
@@ -23457,7 +23715,9 @@
   "perch": {
     "frequencyScore": 3075
   },
-  "percs": {},
+  "percs": {
+    "isSolution": false
+  },
   "perdu": {
     "frequencyScore": 2630
   },
@@ -23497,7 +23757,9 @@
   "perty": {
     "frequencyScore": 4053
   },
-  "perve": {},
+  "perve": {
+    "isSolution": false
+  },
   "pervo": {
     "isSolution": false
   },
@@ -23587,7 +23849,8 @@
     "frequencyScore": 3066
   },
   "phoca": {
-    "frequencyScore": 2723
+    "frequencyScore": 2723,
+    "isSolution": false
   },
   "phone": {
     "frequencyScore": 3440
@@ -23891,7 +24154,8 @@
   },
   "pises": {},
   "pishu": {
-    "frequencyScore": 1844
+    "frequencyScore": 1844,
+    "isSolution": false
   },
   "pisky": {
     "frequencyScore": 3088,
@@ -24121,7 +24385,8 @@
     "frequencyScore": 2985
   },
   "plunk": {
-    "frequencyScore": 2281
+    "frequencyScore": 2281,
+    "isSolution": true
   },
   "pluot": {},
   "plush": {
@@ -24199,7 +24464,9 @@
   "poise": {
     "frequencyScore": 4079
   },
-  "pokal": {},
+  "pokal": {
+    "isSolution": false
+  },
   "poked": {
     "frequencyScore": 3423,
     "isSolution": true
@@ -24217,7 +24484,8 @@
   },
   "poled": {},
   "poler": {
-    "frequencyScore": 4012
+    "frequencyScore": 4012,
+    "isSolution": false
   },
   "poles": {},
   "poley": {
@@ -24235,7 +24503,9 @@
     "frequencyScore": 3038,
     "isSolution": true
   },
-  "polks": {},
+  "polks": {
+    "isSolution": false
+  },
   "polls": {
     "isSolution": true
   },
@@ -24332,7 +24602,9 @@
     "isSolution": false
   },
   "poops": {},
-  "poopy": {},
+  "poopy": {
+    "isSolution": true
+  },
   "poori": {},
   "poort": {},
   "poots": {},
@@ -24372,7 +24644,9 @@
     "isSolution": false
   },
   "porin": {},
-  "porks": {},
+  "porks": {
+    "isSolution": false
+  },
   "porky": {
     "frequencyScore": 3900
   },
@@ -24413,7 +24687,8 @@
     "isSolution": false
   },
   "posit": {
-    "frequencyScore": 3415
+    "frequencyScore": 3415,
+    "isSolution": true
   },
   "posse": {
     "frequencyScore": 3717
@@ -24476,7 +24751,9 @@
   "pouty": {
     "frequencyScore": 3834
   },
-  "powan": {},
+  "powan": {
+    "isSolution": false
+  },
   "power": {
     "frequencyScore": 3650
   },
@@ -24543,7 +24820,9 @@
   "prees": {},
   "preif": {},
   "prems": {},
-  "premy": {},
+  "premy": {
+    "isSolution": false
+  },
   "prent": {
     "isSolution": false
   },
@@ -24588,7 +24867,9 @@
   "pried": {
     "frequencyScore": 3526
   },
-  "prief": {},
+  "prief": {
+    "isSolution": false
+  },
   "prier": {
     "frequencyScore": 3750,
     "isSolution": false
@@ -24749,7 +25030,9 @@
   "psalm": {
     "frequencyScore": 2157
   },
-  "pseud": {},
+  "pseud": {
+    "isSolution": false
+  },
   "pshaw": {
     "frequencyScore": 1622
   },
@@ -24773,7 +25056,9 @@
   "pubal": {
     "frequencyScore": 2897
   },
-  "pubco": {},
+  "pubco": {
+    "isSolution": false
+  },
   "pubes": {
     "frequencyScore": 3053
   },
@@ -24860,9 +25145,12 @@
   },
   "pules": {},
   "pulik": {},
-  "pulis": {},
+  "pulis": {
+    "isSolution": false
+  },
   "pulka": {
-    "frequencyScore": 2623
+    "frequencyScore": 2623,
+    "isSolution": false
   },
   "pulks": {},
   "pulli": {
@@ -24870,7 +25158,9 @@
   },
   "pulls": {},
   "pully": {},
-  "pulmo": {},
+  "pulmo": {
+    "isSolution": false
+  },
   "pulps": {
     "isSolution": false
   },
@@ -24990,7 +25280,8 @@
   "pushy": {},
   "pusle": {},
   "pussy": {
-    "frequencyScore": 3287
+    "frequencyScore": 3287,
+    "isSolution": true
   },
   "putid": {
     "frequencyScore": 2836
@@ -25131,7 +25422,8 @@
     "frequencyScore": 3050
   },
   "quawk": {
-    "frequencyScore": 2015
+    "frequencyScore": 2015,
+    "isSolution": false
   },
   "quayd": {},
   "quays": {
@@ -25282,7 +25574,8 @@
     "frequencyScore": 2639
   },
   "quote": {
-    "frequencyScore": 3217
+    "frequencyScore": 3217,
+    "isSolution": true
   },
   "quoth": {
     "frequencyScore": 2321
@@ -25544,7 +25837,8 @@
     "frequencyScore": 3859
   },
   "ratel": {
-    "frequencyScore": 3954
+    "frequencyScore": 3954,
+    "isSolution": false
   },
   "rater": {
     "frequencyScore": 4083
@@ -25771,7 +26065,8 @@
     "frequencyScore": 2339
   },
   "recto": {
-    "frequencyScore": 2429
+    "frequencyScore": 2429,
+    "isSolution": false
   },
   "recur": {
     "frequencyScore": 2688
@@ -25897,7 +26192,8 @@
   },
   "reggo": {},
   "regia": {
-    "frequencyScore": 3104
+    "frequencyScore": 3104,
+    "isSolution": false
   },
   "regie": {},
   "regin": {
@@ -25946,7 +26242,9 @@
   "reins": {
     "frequencyScore": 2998
   },
-  "reird": {},
+  "reird": {
+    "isSolution": false
+  },
   "reist": {},
   "reive": {
     "isSolution": false
@@ -26067,7 +26365,9 @@
   "reply": {
     "frequencyScore": 3401
   },
-  "repos": {},
+  "repos": {
+    "isSolution": false
+  },
   "repot": {
     "frequencyScore": 2818
   },
@@ -26251,7 +26551,9 @@
   "rhino": {
     "frequencyScore": 2370
   },
-  "rhody": {},
+  "rhody": {
+    "isSolution": false
+  },
   "rhomb": {
     "frequencyScore": 1877
   },
@@ -26299,7 +26601,9 @@
   "ricin": {
     "frequencyScore": 2717
   },
-  "ricks": {},
+  "ricks": {
+    "isSolution": false
+  },
   "riden": {
     "frequencyScore": 3223
   },
@@ -26314,7 +26618,9 @@
     "frequencyScore": 3001,
     "isSolution": true
   },
-  "ridic": {},
+  "ridic": {
+    "isSolution": false
+  },
   "riels": {},
   "riems": {},
   "rieve": {},
@@ -26374,7 +26680,9 @@
   "rinch": {
     "frequencyScore": 2526
   },
-  "rinds": {},
+  "rinds": {
+    "isSolution": false
+  },
   "rindy": {
     "frequencyScore": 3261
   },
@@ -26414,7 +26722,8 @@
     "frequencyScore": 1966
   },
   "risen": {
-    "frequencyScore": 3277
+    "frequencyScore": 3277,
+    "isSolution": true
   },
   "riser": {
     "frequencyScore": 3389
@@ -26432,7 +26741,9 @@
   "risps": {},
   "risus": {},
   "rites": {},
-  "ritts": {},
+  "ritts": {
+    "isSolution": false
+  },
   "ritzy": {
     "frequencyScore": 2948
   },
@@ -26475,7 +26786,8 @@
   "roate": {},
   "robed": {},
   "rober": {
-    "frequencyScore": 3656
+    "frequencyScore": 3656,
+    "isSolution": false
   },
   "robes": {},
   "robin": {
@@ -26531,13 +26843,17 @@
     "isSolution": false
   },
   "roids": {},
-  "roils": {},
+  "roils": {
+    "isSolution": true
+  },
   "roily": {
     "frequencyScore": 3986
   },
   "roins": {},
   "roist": {},
-  "rojak": {},
+  "rojak": {
+    "isSolution": false
+  },
   "rojis": {
     "isSolution": false
   },
@@ -26573,7 +26889,8 @@
     "frequencyScore": 3301
   },
   "ronco": {
-    "frequencyScore": 2810
+    "frequencyScore": 2810,
+    "isSolution": false
   },
   "ronde": {
     "frequencyScore": 3624,
@@ -26658,7 +26975,9 @@
   "rosel": {
     "frequencyScore": 3608
   },
-  "roses": {},
+  "roses": {
+    "isSolution": false
+  },
   "roset": {
     "frequencyScore": 3760
   },
@@ -26825,7 +27144,8 @@
     "isSolution": false
   },
   "rucky": {
-    "frequencyScore": 2806
+    "frequencyScore": 2806,
+    "isSolution": false
   },
   "rudas": {
     "frequencyScore": 2645,
@@ -26881,7 +27201,9 @@
   "rumen": {
     "frequencyScore": 3183
   },
-  "rumes": {},
+  "rumes": {
+    "isSolution": false
+  },
   "rumly": {
     "frequencyScore": 3182
   },
@@ -26917,7 +27239,8 @@
     "isSolution": false
   },
   "runny": {
-    "frequencyScore": 3479
+    "frequencyScore": 3479,
+    "isSolution": true
   },
   "runts": {},
   "runty": {
@@ -27157,7 +27480,9 @@
   "salma": {
     "frequencyScore": 3976
   },
-  "salmi": {},
+  "salmi": {
+    "isSolution": false
+  },
   "salol": {
     "frequencyScore": 4053
   },
@@ -27205,7 +27530,8 @@
     "frequencyScore": 3685
   },
   "sambo": {
-    "frequencyScore": 3303
+    "frequencyScore": 3303,
+    "isSolution": false
   },
   "samek": {},
   "samel": {
@@ -27295,7 +27621,8 @@
     "frequencyScore": 3921
   },
   "sarif": {
-    "frequencyScore": 4165
+    "frequencyScore": 4165,
+    "isSolution": false
   },
   "sarin": {},
   "sarip": {
@@ -27487,7 +27814,8 @@
     "frequencyScore": 3899
   },
   "scamp": {
-    "frequencyScore": 2579
+    "frequencyScore": 2579,
+    "isSolution": true
   },
   "scams": {
     "isSolution": false
@@ -27794,7 +28122,8 @@
     "frequencyScore": 2906
   },
   "scute": {
-    "frequencyScore": 3484
+    "frequencyScore": 3484,
+    "isSolution": true
   },
   "scuts": {
     "isSolution": false
@@ -28079,7 +28408,8 @@
   "serre": {},
   "serrs": {},
   "serry": {
-    "frequencyScore": 4711
+    "frequencyScore": 4711,
+    "isSolution": false
   },
   "serta": {
     "frequencyScore": 4116
@@ -28397,7 +28727,8 @@
   "shily": {},
   "shims": {},
   "shine": {
-    "frequencyScore": 4066
+    "frequencyScore": 4066,
+    "isSolution": true
   },
   "shins": {},
   "shiny": {
@@ -28533,7 +28864,8 @@
     "frequencyScore": 3477
   },
   "shote": {
-    "frequencyScore": 4024
+    "frequencyScore": 4024,
+    "isSolution": false
   },
   "shots": {},
   "shott": {
@@ -29091,7 +29423,9 @@
   },
   "skody": {},
   "skoff": {},
-  "skogs": {},
+  "skogs": {
+    "isSolution": false
+  },
   "skols": {},
   "skool": {},
   "skort": {},
@@ -29268,7 +29602,8 @@
     "frequencyScore": 2980
   },
   "slink": {
-    "frequencyScore": 3138
+    "frequencyScore": 3138,
+    "isSolution": true
   },
   "slipe": {
     "frequencyScore": 3810,
@@ -29308,7 +29643,8 @@
     "isSolution": false
   },
   "sloka": {
-    "frequencyScore": 3230
+    "frequencyScore": 3230,
+    "isSolution": false
   },
   "sloke": {
     "frequencyScore": 3808
@@ -29377,7 +29713,8 @@
     "isSolution": false
   },
   "sluit": {
-    "frequencyScore": 3541
+    "frequencyScore": 3541,
+    "isSolution": false
   },
   "slump": {
     "frequencyScore": 2540
@@ -29870,7 +30207,8 @@
     "frequencyScore": 4340
   },
   "solid": {
-    "frequencyScore": 3959
+    "frequencyScore": 3959,
+    "isSolution": true
   },
   "solio": {
     "frequencyScore": 3825
@@ -29900,7 +30238,8 @@
     "isSolution": false
   },
   "sonar": {
-    "frequencyScore": 4407
+    "frequencyScore": 4407,
+    "isSolution": true
   },
   "sonce": {},
   "sonde": {},
@@ -29992,7 +30331,8 @@
     "frequencyScore": 4793
   },
   "sorus": {
-    "frequencyScore": 3809
+    "frequencyScore": 3809,
+    "isSolution": false
   },
   "sorva": {
     "frequencyScore": 3895
@@ -30018,7 +30358,8 @@
     "isSolution": false
   },
   "sound": {
-    "frequencyScore": 3691
+    "frequencyScore": 3691,
+    "isSolution": true
   },
   "soups": {},
   "soupy": {
@@ -30083,7 +30424,8 @@
     "frequencyScore": 2833
   },
   "spacy": {
-    "frequencyScore": 3797
+    "frequencyScore": 3797,
+    "isSolution": true
   },
   "spade": {
     "frequencyScore": 3666
@@ -30148,7 +30490,9 @@
     "frequencyScore": 3237
   },
   "spans": {},
-  "spard": {},
+  "spard": {
+    "isSolution": false
+  },
   "spare": {
     "frequencyScore": 3941
   },
@@ -30181,7 +30525,8 @@
     "isSolution": false
   },
   "spawn": {
-    "frequencyScore": 2804
+    "frequencyScore": 2804,
+    "isSolution": true
   },
   "spaws": {},
   "spayd": {},
@@ -30213,7 +30558,8 @@
   },
   "spect": {},
   "speed": {
-    "frequencyScore": 3514
+    "frequencyScore": 3514,
+    "isSolution": true
   },
   "speel": {
     "frequencyScore": 3609
@@ -30267,7 +30613,8 @@
     "frequencyScore": 3644
   },
   "spick": {
-    "frequencyScore": 2665
+    "frequencyScore": 2665,
+    "isSolution": false
   },
   "spics": {},
   "spicy": {
@@ -30289,7 +30636,9 @@
   "spiff": {
     "frequencyScore": 2199
   },
-  "spifs": {},
+  "spifs": {
+    "isSolution": false
+  },
   "spike": {
     "frequencyScore": 3474,
     "isSolution": true
@@ -30598,7 +30947,8 @@
     "frequencyScore": 3254
   },
   "stamp": {
-    "frequencyScore": 2650
+    "frequencyScore": 2650,
+    "isSolution": true
   },
   "stand": {
     "frequencyScore": 3170
@@ -30844,7 +31194,8 @@
   },
   "stirs": {},
   "stite": {
-    "frequencyScore": 3786
+    "frequencyScore": 3786,
+    "isSolution": false
   },
   "stith": {
     "frequencyScore": 2890
@@ -30865,7 +31216,8 @@
   },
   "stobs": {},
   "stock": {
-    "frequencyScore": 2710
+    "frequencyScore": 2710,
+    "isSolution": true
   },
   "stoep": {
     "frequencyScore": 3431,
@@ -30927,7 +31279,8 @@
     "frequencyScore": 2972
   },
   "stoof": {
-    "frequencyScore": 2616
+    "frequencyScore": 2616,
+    "isSolution": false
   },
   "stook": {
     "frequencyScore": 2819
@@ -30962,7 +31315,8 @@
     "frequencyScore": 2839
   },
   "storm": {
-    "frequencyScore": 2756
+    "frequencyScore": 2756,
+    "isSolution": true
   },
   "story": {
     "frequencyScore": 3803
@@ -31074,7 +31428,8 @@
     "frequencyScore": 3789
   },
   "strum": {
-    "frequencyScore": 2727
+    "frequencyScore": 2727,
+    "isSolution": false
   },
   "strut": {
     "frequencyScore": 3210
@@ -31577,7 +31932,8 @@
   },
   "sylis": {},
   "sylph": {
-    "frequencyScore": 2324
+    "frequencyScore": 2324,
+    "isSolution": false
   },
   "sylva": {
     "frequencyScore": 2572
@@ -31777,7 +32133,9 @@
   "talar": {
     "frequencyScore": 4029
   },
-  "talas": {},
+  "talas": {
+    "isSolution": false
+  },
   "talcs": {
     "isSolution": true
   },
@@ -31919,7 +32277,8 @@
     "frequencyScore": 4103
   },
   "tapia": {
-    "frequencyScore": 3649
+    "frequencyScore": 3649,
+    "isSolution": false
   },
   "tapir": {
     "frequencyScore": 3625
@@ -32089,7 +32448,8 @@
   },
   "tawed": {},
   "tawer": {
-    "frequencyScore": 3992
+    "frequencyScore": 3992,
+    "isSolution": false
   },
   "tawie": {
     "frequencyScore": 4139
@@ -32202,7 +32562,9 @@
   "teems": {
     "frequencyScore": 2795
   },
-  "teend": {},
+  "teend": {
+    "isSolution": false
+  },
   "teene": {},
   "teens": {
     "frequencyScore": 3055
@@ -32657,7 +33019,8 @@
     "frequencyScore": 2423
   },
   "thort": {
-    "frequencyScore": 2930
+    "frequencyScore": 2930,
+    "isSolution": false
   },
   "those": {
     "frequencyScore": 3476,
@@ -32768,13 +33131,15 @@
     "frequencyScore": 4084
   },
   "tibia": {
-    "frequencyScore": 3066
+    "frequencyScore": 3066,
+    "isSolution": false
   },
   "tical": {
     "frequencyScore": 3019
   },
   "ticca": {
-    "frequencyScore": 2669
+    "frequencyScore": 2669,
+    "isSolution": false
   },
   "ticed": {},
   "ticer": {
@@ -33132,7 +33497,9 @@
   "tonus": {
     "frequencyScore": 3057
   },
-  "tools": {},
+  "tools": {
+    "isSolution": false
+  },
   "tooms": {
     "isSolution": false
   },
@@ -33236,14 +33603,17 @@
   "torte": {},
   "torts": {},
   "torus": {
-    "frequencyScore": 3262
+    "frequencyScore": 3262,
+    "isSolution": true
   },
   "torve": {
     "frequencyScore": 3926
   },
   "tosas": {},
   "tosed": {},
-  "toses": {},
+  "toses": {
+    "isSolution": false
+  },
   "toshy": {
     "frequencyScore": 3451,
     "isSolution": false
@@ -33500,7 +33870,8 @@
     "frequencyScore": 3025
   },
   "trice": {
-    "frequencyScore": 3603
+    "frequencyScore": 3603,
+    "isSolution": false
   },
   "trick": {
     "frequencyScore": 2624
@@ -33696,7 +34067,9 @@
   "tsine": {
     "frequencyScore": 3141
   },
-  "tsked": {},
+  "tsked": {
+    "isSolution": false
+  },
   "tsuba": {
     "frequencyScore": 1973,
     "isSolution": false
@@ -34068,7 +34441,9 @@
   "typos": {},
   "typps": {},
   "typto": {},
-  "tyran": {},
+  "tyran": {
+    "isSolution": false
+  },
   "tyred": {},
   "tyres": {},
   "tyros": {},
@@ -34196,7 +34571,8 @@
   "umrah": {},
   "umras": {},
   "unact": {
-    "frequencyScore": 2520
+    "frequencyScore": 2520,
+    "isSolution": false
   },
   "unadd": {
     "frequencyScore": 2127
@@ -34376,7 +34752,8 @@
     "frequencyScore": 2002
   },
   "unhap": {
-    "frequencyScore": 1742
+    "frequencyScore": 1742,
+    "isSolution": false
   },
   "unhat": {
     "frequencyScore": 2249
@@ -34416,7 +34793,8 @@
     "isSolution": true
   },
   "unite": {
-    "frequencyScore": 3028
+    "frequencyScore": 3028,
+    "isSolution": true
   },
   "units": {},
   "unity": {
@@ -34442,7 +34820,8 @@
     "frequencyScore": 1916
   },
   "unkin": {
-    "frequencyScore": 2028
+    "frequencyScore": 2028,
+    "isSolution": false
   },
   "unlap": {
     "frequencyScore": 2151
@@ -34535,7 +34914,8 @@
     "frequencyScore": 2580
   },
   "unrig": {
-    "frequencyScore": 2269
+    "frequencyScore": 2269,
+    "isSolution": true
   },
   "unrip": {
     "frequencyScore": 2320
@@ -34636,7 +35016,8 @@
   },
   "unwit": {},
   "unwon": {
-    "frequencyScore": 1767
+    "frequencyScore": 1767,
+    "isSolution": false
   },
   "unzen": {
     "frequencyScore": 2408
@@ -34992,7 +35373,8 @@
     "frequencyScore": 3927
   },
   "valid": {
-    "frequencyScore": 3225
+    "frequencyScore": 3225,
+    "isSolution": true
   },
   "valis": {},
   "valor": {
@@ -35161,7 +35543,8 @@
     "frequencyScore": 3768
   },
   "venin": {
-    "frequencyScore": 3054
+    "frequencyScore": 3054,
+    "isSolution": false
   },
   "venom": {
     "frequencyScore": 2442
@@ -35207,7 +35590,8 @@
   "vesta": {},
   "vests": {},
   "vetch": {
-    "frequencyScore": 2323
+    "frequencyScore": 2323,
+    "isSolution": false
   },
   "veuve": {
     "frequencyScore": 3029
@@ -35249,7 +35633,8 @@
     "isSolution": false
   },
   "vidya": {
-    "frequencyScore": 1965
+    "frequencyScore": 1965,
+    "isSolution": false
   },
   "viers": {},
   "views": {},
@@ -35478,7 +35863,8 @@
     "frequencyScore": 3449
   },
   "vomit": {
-    "frequencyScore": 3017
+    "frequencyScore": 3017,
+    "isSolution": true
   },
   "votal": {
     "frequencyScore": 3105
@@ -35487,7 +35873,9 @@
   "voter": {
     "frequencyScore": 3559
   },
-  "votes": {},
+  "votes": {
+    "isSolution": true
+  },
   "vouch": {
     "frequencyScore": 2485,
     "isSolution": true
@@ -35700,7 +36088,9 @@
   "wanga": {
     "frequencyScore": 3241
   },
-  "wangs": {},
+  "wangs": {
+    "isSolution": false
+  },
   "wanks": {},
   "wanky": {},
   "wanle": {
@@ -35756,7 +36146,9 @@
   "warth": {
     "frequencyScore": 3318
   },
-  "warts": {},
+  "warts": {
+    "isSolution": false
+  },
   "warty": {
     "frequencyScore": 4199
   },
@@ -35787,7 +36179,9 @@
   "waste": {
     "frequencyScore": 3750
   },
-  "wasts": {},
+  "wasts": {
+    "isSolution": false
+  },
   "wasty": {
     "frequencyScore": 3735
   },
@@ -35844,7 +36238,9 @@
     "isSolution": false
   },
   "waxes": {},
-  "wayed": {},
+  "wayed": {
+    "isSolution": false
+  },
   "wazir": {},
   "wazoo": {},
   "weaky": {
@@ -35873,7 +36269,9 @@
   "wecht": {
     "frequencyScore": 2358
   },
-  "wedel": {},
+  "wedel": {
+    "isSolution": false
+  },
   "wedge": {
     "frequencyScore": 3129,
     "isSolution": true
@@ -35938,7 +36336,9 @@
   "weird": {
     "frequencyScore": 2941
   },
-  "weirs": {},
+  "weirs": {
+    "isSolution": false
+  },
   "weise": {},
   "weism": {
     "frequencyScore": 2672
@@ -36114,7 +36514,8 @@
     "frequencyScore": 2087
   },
   "whelm": {
-    "frequencyScore": 2004
+    "frequencyScore": 2004,
+    "isSolution": true
   },
   "whelp": {
     "frequencyScore": 1980
@@ -36168,7 +36569,9 @@
     "frequencyScore": 2298,
     "isSolution": false
   },
-  "whims": {},
+  "whims": {
+    "isSolution": false
+  },
   "whine": {
     "frequencyScore": 3209
   },
@@ -36210,7 +36613,8 @@
     "frequencyScore": 2267
   },
   "whity": {
-    "frequencyScore": 3152
+    "frequencyScore": 3152,
+    "isSolution": false
   },
   "whizz": {},
   "whole": {
@@ -36483,7 +36887,9 @@
     "frequencyScore": 3394
   },
   "wolfs": {},
-  "wolly": {},
+  "wolly": {
+    "isSolution": false
+  },
   "wolve": {
     "frequencyScore": 3317
   },
@@ -36642,7 +37048,8 @@
     "isSolution": false
   },
   "wrier": {
-    "frequencyScore": 3519
+    "frequencyScore": 3519,
+    "isSolution": false
   },
   "wries": {},
   "wring": {
@@ -36703,7 +37110,8 @@
   },
   "wuxia": {},
   "wuzzy": {
-    "frequencyScore": 2402
+    "frequencyScore": 2402,
+    "isSolution": false
   },
   "wyled": {},
   "wyles": {},
@@ -36740,7 +37148,9 @@
   "xoana": {
     "frequencyScore": 3222
   },
-  "xrays": {},
+  "xrays": {
+    "isSolution": false
+  },
   "xurel": {
     "frequencyScore": 3277,
     "isSolution": false
@@ -36866,7 +37276,9 @@
   "yarco": {
     "isSolution": false
   },
-  "yards": {},
+  "yards": {
+    "isSolution": false
+  },
   "yarer": {
     "isSolution": false
   },
@@ -36997,7 +37409,8 @@
   "yexed": {},
   "yexes": {},
   "yezzy": {
-    "frequencyScore": 2496
+    "frequencyScore": 2496,
+    "isSolution": false
   },
   "yfere": {},
   "ygapo": {
@@ -37211,14 +37624,17 @@
   "zambo": {
     "frequencyScore": 2224
   },
-  "zamia": {},
+  "zamia": {
+    "isSolution": false
+  },
   "zanja": {},
   "zante": {
     "frequencyScore": 3787
   },
   "zanza": {},
   "zanze": {
-    "frequencyScore": 3407
+    "frequencyScore": 3407,
+    "isSolution": false
   },
   "zapas": {
     "frequencyScore": 2925,
@@ -37227,7 +37643,9 @@
   "zappy": {},
   "zarfs": {},
   "zaris": {},
-  "zatis": {},
+  "zatis": {
+    "isSolution": false
+  },
   "zaxes": {
     "isSolution": false
   },
@@ -37239,7 +37657,9 @@
     "isSolution": false
   },
   "zazen": {},
-  "zeals": {},
+  "zeals": {
+    "isSolution": false
+  },
   "zebec": {},
   "zebra": {
     "frequencyScore": 2524
@@ -37384,7 +37804,9 @@
   "zombi": {
     "frequencyScore": 1871
   },
-  "zonae": {},
+  "zonae": {
+    "isSolution": false
+  },
   "zonal": {
     "frequencyScore": 3199
   },
