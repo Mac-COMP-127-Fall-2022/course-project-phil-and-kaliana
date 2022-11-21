@@ -1,4 +1,5 @@
 import io, string, json, time, os
+import random
 
 def filterAllBut5Ltrs():
     with open('res/wordList/words', 'r') as file:
@@ -40,11 +41,14 @@ def findAndSetFrequencyValues(words, frequencies):
 def setSolution(words):
     makeWordsBackup()
     try:
+        forSelection = words.copy()
         print("===== SELECT WHETHER WORDS SHOULD BE IN SOLUTION LIST =====\n\nHit enter/return to designate word as NOT a solution word\n\n^C to exit\n\n'undo' to reverse last word's designation\n\nanything else to designate word as a valid solution")
         lastWord = ""
-        for w in words:
-            if "isSolution" in words[w]:
-                continue
+        w = "amaga"
+        while len(forSelection) > 0:
+            while "isSolution" in words[w]:
+                w = random.choice(list(forSelection.keys()))
+                forSelection.pop(w)
             while True:
                 input_ = input(f"\n=====\n{w}\n")
                 if input_ == 'undo' and lastWord: 
