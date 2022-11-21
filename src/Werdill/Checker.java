@@ -3,6 +3,8 @@ package Werdill;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -36,6 +38,7 @@ public class Checker {
     private void chooseSolution() {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
+        System.out.println(Arrays.toString(solution));
     }
 
     public List<String> getWords() {
@@ -44,14 +47,30 @@ public class Checker {
 
     public Integer[] check(String[] guess) {
         //TODO: Check is in word list
+        // if (!words.contains(guess.toString().toLowerCase())) {
+        //     return null;
+        // }
+
+        ArrayList<String> solutionCopy = new ArrayList<>(Arrays.asList(solution));
 
         Integer[] ret = new Integer[5];
         // <testVersion>
         for (int i = 0; i < 5; i++) {
-            ret[i] = rand.nextInt(3);
+            if (guess[i].equals(solutionCopy.get(i))) {
+                ret[i] = 2;
+                // guess[i] = "";
+                solutionCopy.set(i, "") ;//= "";
+                continue;
+            } 
+            if (solutionCopy.contains(guess[i])) {
+                ret[i] = 1;
+                solutionCopy.set(i, "") ;//= "";
+                continue;
+            }
+            ret[i] = 0;
+            // guess[i] = "";
         }
         // </testVersion>
         return ret;
     }
-
 }

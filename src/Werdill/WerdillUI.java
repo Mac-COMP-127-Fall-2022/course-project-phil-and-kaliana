@@ -39,7 +39,8 @@ public class WerdillUI extends GraphicsGroup {
 
         canvas.onKeyDown((event) -> { //TODO: needs refactoring into smaller methods
             Key key = event.getKey();
-            if (key == Key.RETURN_OR_ENTER && currentColumn >= 4) {
+            if (key == Key.RETURN_OR_ENTER) {
+                System.out.println('h');
                 sumbitGuess();
             } 
             if (key == Key.DELETE_OR_BACKSPACE) {
