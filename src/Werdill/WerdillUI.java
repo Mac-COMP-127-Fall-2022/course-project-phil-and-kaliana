@@ -6,18 +6,12 @@ import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.List;
+
 import edu.macalester.graphics.events.Key;
 
 public class WerdillUI extends GraphicsGroup {
-    /* these constants may or may not be used in final version: */
-        // private static final Color BACKGROUND_COLOR = new Color(0xffffff);
-
-        // private static final Color BASE_COLOR = Color.WHITE;
-        // private static final Color SELECTED_COLOR = Color.LIGHT_GRAY;
-
-        // private static final Color WRONG_RIGHT_TEXT_COLOR = new Color(0xffffff);
-        // private static final Color NOT_IN_AND_BASE_TEXT_COLOR = new Color(0xffffff);
-
     private static final Color NOT_IN_COLOR = Color.GRAY;//new Color(0xafafaf);
     private static final Color WRONG_POSITION_COLOR = new Color(0xffc900);
     private static final Color RIGHT_POSITION_COLOR = new Color(0x049c00);
@@ -26,13 +20,16 @@ public class WerdillUI extends GraphicsGroup {
     private static final int SQUARE_PADDING = 10;
 
     private static final double KEY_PADDING = SQUARE_PADDING / 2;
-    private static final double KEY_SIDE_LENGTH = ((SQUARE_SIDE_LENGTH + SQUARE_PADDING) * 5.0 - KEY_PADDING * 9) / 10;
+    private static final double KEY_SIDE_LENGTH = ((SQUARE_SIDE_LENGTH + SQUARE_PADDING) * 5.0 - KEY_PADDING * 11) / 10;
 
     private int currentRow;
     private int currentColumn;
     private final Rectangle[][] squares = new Rectangle[6][5];
     private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
-    private final Rectangle[][] keyboard = new Rectangle[3][];
+
+    private final HashMap<String, Rectangle> keyboard = new HashMap<>();
+    private final HashMap<String, GraphicsText> keyLabels = new HashMap<>();
+    private final HashMap<String, Integer> keyStatus = new HashMap<>();
 
     private final CanvasWindow canvas;
     private final Checker checker;
@@ -44,16 +41,15 @@ public class WerdillUI extends GraphicsGroup {
         canvas.onKeyDown((event) -> { //TODO: needs refactoring into smaller methods
             Key key = event.getKey();
             if (key == Key.RETURN_OR_ENTER) {
-                System.out.println('h');
                 sumbitGuess();
             } 
             if (key == Key.DELETE_OR_BACKSPACE) {
                 GraphicsText label = squareLabels[currentRow][currentColumn];
-                // if (label.getText() == "") {
+                if (label.getText() == "") {
                     shiftColumnLeft();
-                // } else {
+                } else {
                     label.setText("");
-                // }
+                }
                 refreshGraphicsTextPositions();
             } else if (key == Key.LEFT_ARROW) {
                 shiftColumnLeft();
@@ -68,6 +64,7 @@ public class WerdillUI extends GraphicsGroup {
         });
 
         reset();
+        assembleKeyboard();
         setPosition(canvas.getWidth()/2 - getWidth()/2 - SQUARE_PADDING, canvas.getHeight()/2 - getHeight()/2 - SQUARE_PADDING);
     }
 
@@ -173,32 +170,44 @@ public class WerdillUI extends GraphicsGroup {
         }
     }
 
-    private void assembleArrayOfKeyRectangles() { //TODO: NOT IMPLEMENTED
-        double x = 0;
+    private void assembleKeyboard() {
+        double x = 0 + SQUARE_PADDING;
         double y = (SQUARE_PADDING + SQUARE_SIDE_LENGTH) * 6 + KEY_PADDING + KEY_SIDE_LENGTH;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                // newSquare(x, y, i, j);
-                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-            }
-
-            x = SQUARE_PADDING;
-            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
+        for (String ltr : List.of("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P")) {
+            createKey(x, y, ltr);
+            x += KEY_SIDE_LENGTH + KEY_PADDING;
+        }
+        x = 0.25 * KEY_SIDE_LENGTH + SQUARE_PADDING;
+        y += KEY_SIDE_LENGTH + KEY_PADDING;
+        for (String ltr : List.of("A", "S", "D", "F", "G", "H", "J", "K", "L")) {
+            createKey(x, y, ltr);
+            x += KEY_SIDE_LENGTH + KEY_PADDING;
+        }
+        x = 0.75 * KEY_SIDE_LENGTH + SQUARE_PADDING;
+        y += KEY_SIDE_LENGTH + KEY_PADDING;
+        for (String ltr : List.of("Z", "X", "C", "V", "B", "N", "M")) {
+            createKey(x, y, ltr);
+            x += KEY_SIDE_LENGTH + KEY_PADDING;
         }
     }
 
-    private void assembleArrayOfKeyGraphicsTexts() { //TODO: NOT IMPLEMENTED
-        int x = SQUARE_PADDING;
-        int y = SQUARE_PADDING;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                newSquareGraphicsText(x, y, i, j);
-                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-            }
+    private void createKey(double x, double y, String ltr) {
+        keyStatus.put(ltr, -1);
 
-            x = SQUARE_PADDING;
-            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-        }
+        Rectangle newKey = new Rectangle(x, y, KEY_SIDE_LENGTH, KEY_SIDE_LENGTH);
+        keyboard.put(ltr, newKey);
+
+        GraphicsText newKeyLabel = new GraphicsText(ltr, x, y);
+        keyLabels.put(ltr, newKeyLabel);
+
+        newKeyLabel.setFontSize(KEY_SIDE_LENGTH/1.5);
+
+        double dx = newKey.getCenter().getX() - newKeyLabel.getCenter().getX();
+        double dy = newKey.getCenter().getY() - newKeyLabel.getCenter().getY();
+        newKeyLabel.moveBy(dx, dy);
+
+        add(newKey);
+        add(newKeyLabel);
     }
 
     private void refreshGraphicsTextPositions() {
@@ -215,17 +224,50 @@ public class WerdillUI extends GraphicsGroup {
         }
     }
 
+    private void refreshKeyboard() {
+        for (String key : keyLabels.keySet()) {
+            Rectangle square = keyboard.get(key);
+            GraphicsText label = keyLabels.get(key);
+
+            switch (keyStatus.get(key)) {
+                case 0:
+                    square.setFillColor(NOT_IN_COLOR);
+                    square.setStrokeColor(NOT_IN_COLOR);
+
+                    label.setFillColor(Color.WHITE);                    
+                    break;
+                    
+                case 1:
+                    square.setFillColor(WRONG_POSITION_COLOR);
+                    square.setStrokeColor(WRONG_POSITION_COLOR);
+
+                    label.setFillColor(Color.WHITE);
+                    break;
+            
+                case 2:
+                    square.setFillColor(RIGHT_POSITION_COLOR);
+                    square.setStrokeColor(RIGHT_POSITION_COLOR);
+
+                    label.setFillColor(Color.WHITE);
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        canvas.draw();
+    }
+
     private void newSquare(int x, int y, int row, int column) {
         Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
         add(nextSquare);
         
-
         squares[row][column] = nextSquare;
     }
 
     private void newSquareGraphicsText(int x, int y, int row, int column) {
         GraphicsText nextLabel = new GraphicsText("", x, y);
-        nextLabel.setFontSize(43);
+        nextLabel.setFontSize(SQUARE_SIDE_LENGTH/1.5);
         add(nextLabel);
 
         squareLabels[row][column] = nextLabel;
@@ -243,30 +285,51 @@ public class WerdillUI extends GraphicsGroup {
         for (int i = 0; i < 5; i++) {
             GraphicsText label = squareLabels[currentRow][i];
             label.setFillColor(Color.WHITE);
+            String ltr = label.getText();
+            Integer currentKeyStatus;
 
             Rectangle square = row[i];
             switch (checked[i]) {
                 case 0:
                     square.setFillColor(NOT_IN_COLOR);
                     square.setStrokeColor(NOT_IN_COLOR);
+
+                    currentKeyStatus = keyStatus.get(ltr);
+                    keyStatus.put(ltr, 
+                        currentKeyStatus < 0  ? 0 :
+                        currentKeyStatus
+                    );
                     break;
             
                 case 1:
                     square.setFillColor(WRONG_POSITION_COLOR);
                     square.setStrokeColor(WRONG_POSITION_COLOR);
+
+                    currentKeyStatus = keyStatus.get(ltr);
+                    keyStatus.put(ltr, 
+                        currentKeyStatus < 1 ? 1 :
+                        currentKeyStatus
+                    );
                     break;
             
                 case 2:
                     square.setFillColor(RIGHT_POSITION_COLOR);
                     square.setStrokeColor(RIGHT_POSITION_COLOR);
+
+                    currentKeyStatus = keyStatus.get(ltr);
+                    keyStatus.put(ltr, 
+                        currentKeyStatus < 2 ? 2 :
+                        currentKeyStatus
+                    );
                     break;
             
                 default:
                     break;
             }
             canvas.draw();
-
+            
             canvas.pause(200);
         }
+        refreshKeyboard();
     }
 }

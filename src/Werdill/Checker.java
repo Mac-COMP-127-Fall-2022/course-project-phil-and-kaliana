@@ -40,7 +40,7 @@ public class Checker {
         // FOR TESTING, CHANGE AND UNCOMMENT BELOW LINE:
         // setSolution("adapt");
 
-        System.out.println(Arrays.toString(solution));
+        // System.out.println(Arrays.toString(solution));
     }
 
     public List<String> getWords() {
