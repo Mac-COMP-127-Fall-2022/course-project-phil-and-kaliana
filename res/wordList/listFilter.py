@@ -50,6 +50,7 @@ def setSolution(words):
                 w = random.choice(list(forSelection.keys()))
                 forSelection.pop(w)
             while True:
+                print(words[w])
                 input_ = input(f"\n=====\n{w}\n")
                 if input_ == 'undo' and lastWord: 
                     words[lastWord]["isSolution"] = not words[lastWord]["isSolution"]
