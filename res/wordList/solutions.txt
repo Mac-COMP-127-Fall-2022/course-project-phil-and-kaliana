@@ -287,6 +287,7 @@ bribe
 brick
 bride
 brink
+briny
 brook
 broth
 brown
@@ -301,12 +302,14 @@ burqa
 burst
 bushy
 butts
+buzzy
 bylaw
 cabin
 cacao
 cadet
 caged
 caked
+camel
 cameo
 candy
 caned
@@ -354,10 +357,12 @@ clamp
 clank
 clash
 class
+clear
 cleat
 clerk
 click
 cling
+clink
 cloak
 cloth
 clout
@@ -385,11 +390,13 @@ crane
 crate
 crawl
 creek
+creep
 creme
 crepe
 cress
 cried
 crime
+crimp
 crisp
 croak
 crude
@@ -440,6 +447,7 @@ dozes
 drain
 drank
 drape
+drawn
 dread
 dream
 dress
@@ -447,6 +455,7 @@ drier
 drift
 drily
 drink
+drive
 droid
 drove
 drown
@@ -486,6 +495,7 @@ essay
 ester
 ether
 ethic
+evade
 every
 evict
 evoke
@@ -501,11 +511,13 @@ farce
 farse
 fatal
 fault
+favor
 feces
 feint
 fella
 felon
 felty
+femur
 feral
 ferry
 fetus
@@ -569,6 +581,7 @@ gamed
 gamer
 gamey
 gasps
+gauge
 gayly
 gazed
 genie
@@ -608,6 +621,7 @@ gothy
 gourd
 grabs
 grail
+grain
 grand
 grape
 graph
@@ -622,6 +636,7 @@ grope
 grove
 grown
 grunt
+guano
 gucky
 guess
 guide
@@ -655,6 +670,7 @@ hinge
 hippo
 hired
 hissy
+hitch
 hoard
 hobby
 hoist
@@ -670,6 +686,7 @@ howdy
 hucks
 hulky
 human
+humid
 hunch
 hymen
 hyped
@@ -693,6 +710,7 @@ jiggy
 joked
 joker
 jotty
+jowel
 judge
 judgy
 juicy
@@ -730,6 +748,7 @@ layed
 layer
 layup
 leafy
+leapt
 lease
 leash
 least
@@ -796,6 +815,7 @@ melty
 merch
 metal
 micro
+midst
 miked
 milfs
 mimer
@@ -805,6 +825,7 @@ minor
 miser
 missy
 mixes
+mocha
 mochi
 modal
 model
@@ -817,6 +838,7 @@ moldy
 molts
 momma
 money
+moony
 moose
 moper
 morph
@@ -840,6 +862,7 @@ nears
 needy
 never
 nexus
+niche
 niece
 nifty
 night
@@ -850,6 +873,7 @@ noble
 nomad
 north
 nosed
+novel
 nubby
 nuked
 nylon
@@ -878,6 +902,7 @@ owner
 paged
 pager
 paint
+panda
 panel
 panic
 pants
@@ -902,6 +927,7 @@ pious
 piper
 pissy
 pitch
+pixie
 pizza
 plank
 plate
@@ -948,6 +974,7 @@ purrs
 pussy
 pyrex
 quack
+quail
 query
 quick
 quiet
@@ -955,6 +982,7 @@ quips
 quits
 quote
 rabid
+racer
 radii
 radio
 raise
@@ -977,11 +1005,13 @@ rehab
 reign
 relay
 relit
+remix
 reneg
 repay
 reset
 resin
 retro
+rhino
 ridgy
 rifle
 rigid
@@ -989,6 +1019,7 @@ rigor
 rinse
 riper
 risen
+riser
 rival
 roams
 roast
@@ -998,6 +1029,7 @@ roost
 rosin
 rotor
 rough
+rouse
 route
 rowdy
 rowed
@@ -1021,6 +1053,7 @@ saute
 sauve
 saver
 savor
+sawed
 scaly
 scamp
 scant
@@ -1029,6 +1062,7 @@ scene
 scoff
 scold
 scoop
+scoot
 score
 scorn
 scour
@@ -1050,6 +1084,7 @@ shard
 shark
 sharp
 shawl
+sheen
 sheep
 sheet
 shelf
@@ -1058,6 +1093,7 @@ shied
 shier
 shift
 shine
+shoal
 shone
 shook
 short
@@ -1103,6 +1139,7 @@ snack
 snags
 snaky
 snark
+snarl
 snook
 snout
 snowy
@@ -1127,12 +1164,14 @@ speed
 spell
 spent
 sperm
+spice
 spiel
 spike
 spill
 spire
 splay
 split
+spook
 spoon
 spork
 spout
@@ -1182,6 +1221,7 @@ swamp
 swarm
 swept
 swing
+swoop
 swore
 synth
 tabby
@@ -1209,6 +1249,7 @@ testy
 thank
 theme
 thick
+thigh
 thing
 those
 throw
@@ -1223,6 +1264,7 @@ timed
 tired
 tithe
 title
+today
 toner
 tonga
 tonne
@@ -1230,6 +1272,7 @@ tooth
 torus
 toted
 totum
+touch
 tough
 towed
 towel
@@ -1242,6 +1285,8 @@ trans
 trawl
 treck
 triad
+trick
+troop
 trout
 trunk
 truss
@@ -1268,6 +1313,7 @@ unify
 union
 unite
 unity
+unlit
 unpin
 unrig
 unset
@@ -1275,6 +1321,7 @@ untie
 upped
 urban
 urged
+using
 usual
 utter
 vague
@@ -1289,6 +1336,7 @@ viper
 virge
 visit
 vodka
+voila
 vomit
 voted
 voter
@@ -1297,9 +1345,11 @@ vouch
 wacky
 waded
 waged
+wagon
 wails
 waily
 waive
+waltz
 wanna
 warps
 wasnt
@@ -1326,6 +1376,7 @@ wince
 wised
 witch
 witty
+woman
 women
 woody
 woosh
@@ -1342,7 +1393,9 @@ wrong
 wrote
 wrung
 wryer
+wryly
 yanks
+yearn
 yeast
 yelps
 yikes
