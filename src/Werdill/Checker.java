@@ -19,8 +19,8 @@ public class Checker {
 
     private Random rand = new Random();
 
-    public String getSolution() {
-        return solution.toString();
+    public String[] getSolution() {
+        return solution;
     }
 
     public void setSolution(String newSolution) { // NOTE: switch to private if not unit testing
@@ -38,9 +38,7 @@ public class Checker {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
         // FOR TESTING, CHANGE AND UNCOMMENT BELOW LINE:
-        // setSolution("adapt");
-
-        // System.out.println(Arrays.toString(solution));
+        // setSolution("ember");
     }
 
     public List<String> getWords() {

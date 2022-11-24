@@ -6,6 +6,7 @@ import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class WerdillUI extends GraphicsGroup {
             Key key = event.getKey();
             if (key == Key.RETURN_OR_ENTER) {
                 sumbitGuess();
+                System.out.println(Arrays.toString(checker.getSolution())); //TODO: should be replaced with way of displaying solution at end
             } 
             if (key == Key.DELETE_OR_BACKSPACE) {
                 GraphicsText label = squareLabels[currentRow][currentColumn];
