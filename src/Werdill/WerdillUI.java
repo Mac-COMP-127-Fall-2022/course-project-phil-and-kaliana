@@ -28,9 +28,11 @@ public class WerdillUI extends GraphicsGroup {
     private final Rectangle[][] squares = new Rectangle[6][5];
     private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
 
+    // <Keyboard>
     private final HashMap<String, Rectangle> keyboard = new HashMap<>();
     private final HashMap<String, GraphicsText> keyLabels = new HashMap<>();
     private final HashMap<String, Integer> keyStatus = new HashMap<>();
+    // </Keyboard>
 
     private final CanvasWindow canvas;
     private final Checker checker;
@@ -58,16 +60,20 @@ public class WerdillUI extends GraphicsGroup {
             } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
                 shiftColumnRight();
             } else if ("QWERTYUIOPASDFGHJKLZXCVBNM".contains(key.toString()) && currentColumn < 5) {
-                GraphicsText label = squareLabels[currentRow][currentColumn];
-                label.setText(key.toString());
-                refreshGraphicsTextPositions();
-                shiftColumnRight();
+                setNextSquareToLtr(key);
             }
         });
 
         reset();
         assembleKeyboard();
         setPosition(canvas.getWidth()/2 - getWidth()/2 - SQUARE_PADDING, canvas.getHeight()/2 - getHeight()/2 - SQUARE_PADDING);
+    }
+
+    private void setNextSquareToLtr(Key key) {
+        GraphicsText label = squareLabels[currentRow][currentColumn];
+        label.setText(key.toString());
+        refreshGraphicsTextPositions();
+        shiftColumnRight();
     }
 
     private void sumbitGuess() {
@@ -97,7 +103,8 @@ public class WerdillUI extends GraphicsGroup {
     private void doInvalidGuess() {
         return;
     }
-
+    
+    // <Grid>
     private String[] getGuess() {
         String[] ret = new String[5];
         for (int i = 0; i < 5; i++) {
@@ -171,23 +178,25 @@ public class WerdillUI extends GraphicsGroup {
             y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
         }
     }
+    // </Grid>
 
+    // <Keyboard>
     private void assembleKeyboard() {
         double x = 0 + SQUARE_PADDING;
         double y = (SQUARE_PADDING + SQUARE_SIDE_LENGTH) * 6 + KEY_PADDING + KEY_SIDE_LENGTH;
-        for (String ltr : List.of("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P")) {
-            createKey(x, y, ltr);
-            x += KEY_SIDE_LENGTH + KEY_PADDING;
-        }
+        createKeyRow(x, y, List.of("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"));
+        
         x = 0.25 * KEY_SIDE_LENGTH + SQUARE_PADDING;
         y += KEY_SIDE_LENGTH + KEY_PADDING;
-        for (String ltr : List.of("A", "S", "D", "F", "G", "H", "J", "K", "L")) {
-            createKey(x, y, ltr);
-            x += KEY_SIDE_LENGTH + KEY_PADDING;
-        }
+        createKeyRow(x, y, List.of("A", "S", "D", "F", "G", "H", "J", "K", "L"));
+
         x = 0.75 * KEY_SIDE_LENGTH + SQUARE_PADDING;
         y += KEY_SIDE_LENGTH + KEY_PADDING;
-        for (String ltr : List.of("Z", "X", "C", "V", "B", "N", "M")) {
+        createKeyRow(x, y, List.of("Z", "X", "C", "V", "B", "N", "M"));
+    }
+
+    private void createKeyRow(double x, double y, List<String> keys) {
+        for (String ltr : keys) {
             createKey(x, y, ltr);
             x += KEY_SIDE_LENGTH + KEY_PADDING;
         }
@@ -211,7 +220,9 @@ public class WerdillUI extends GraphicsGroup {
         add(newKey);
         add(newKeyLabel);
     }
+    // </Keyboard>
 
+    // Grid
     private void refreshGraphicsTextPositions() {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
@@ -226,6 +237,7 @@ public class WerdillUI extends GraphicsGroup {
         }
     }
 
+    // Keyboard
     private void refreshKeyboard() {
         for (String key : keyLabels.keySet()) {
             Rectangle square = keyboard.get(key);
@@ -233,24 +245,15 @@ public class WerdillUI extends GraphicsGroup {
 
             switch (keyStatus.get(key)) {
                 case 0:
-                    square.setFillColor(NOT_IN_COLOR);
-                    square.setStrokeColor(NOT_IN_COLOR);
-
-                    label.setFillColor(Color.WHITE);                    
+                    setKeyColor(square, label, NOT_IN_COLOR);                    
                     break;
                     
                 case 1:
-                    square.setFillColor(WRONG_POSITION_COLOR);
-                    square.setStrokeColor(WRONG_POSITION_COLOR);
-
-                    label.setFillColor(Color.WHITE);
+                    setKeyColor(square, label, WRONG_POSITION_COLOR);
                     break;
             
                 case 2:
-                    square.setFillColor(RIGHT_POSITION_COLOR);
-                    square.setStrokeColor(RIGHT_POSITION_COLOR);
-
-                    label.setFillColor(Color.WHITE);
+                    setKeyColor(square, label, RIGHT_POSITION_COLOR);
                     break;
             
                 default:
@@ -260,6 +263,14 @@ public class WerdillUI extends GraphicsGroup {
         canvas.draw();
     }
 
+    private void setKeyColor(Rectangle square, GraphicsText label, Color color) {
+        square.setFillColor(color);
+        square.setStrokeColor(color);
+
+        label.setFillColor(Color.WHITE);
+    }
+
+    // Grid
     private void newSquare(int x, int y, int row, int column) {
         Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
         add(nextSquare);
@@ -267,6 +278,7 @@ public class WerdillUI extends GraphicsGroup {
         squares[row][column] = nextSquare;
     }
 
+    // <Grid>
     private void newSquareGraphicsText(int x, int y, int row, int column) {
         GraphicsText nextLabel = new GraphicsText("", x, y);
         nextLabel.setFontSize(SQUARE_SIDE_LENGTH/1.5);
@@ -288,41 +300,19 @@ public class WerdillUI extends GraphicsGroup {
             GraphicsText label = squareLabels[currentRow][i];
             label.setFillColor(Color.WHITE);
             String ltr = label.getText();
-            Integer currentKeyStatus;
 
             Rectangle square = row[i];
             switch (checked[i]) {
                 case 0:
-                    square.setFillColor(NOT_IN_COLOR);
-                    square.setStrokeColor(NOT_IN_COLOR);
-
-                    currentKeyStatus = keyStatus.get(ltr);
-                    keyStatus.put(ltr, 
-                        currentKeyStatus < 0  ? 0 :
-                        currentKeyStatus
-                    );
+                    setSquareAndKeyColor(ltr, square, 0);
                     break;
             
                 case 1:
-                    square.setFillColor(WRONG_POSITION_COLOR);
-                    square.setStrokeColor(WRONG_POSITION_COLOR);
-
-                    currentKeyStatus = keyStatus.get(ltr);
-                    keyStatus.put(ltr, 
-                        currentKeyStatus < 1 ? 1 :
-                        currentKeyStatus
-                    );
+                    setSquareAndKeyColor(ltr, square, 1);
                     break;
-            
+                    
                 case 2:
-                    square.setFillColor(RIGHT_POSITION_COLOR);
-                    square.setStrokeColor(RIGHT_POSITION_COLOR);
-
-                    currentKeyStatus = keyStatus.get(ltr);
-                    keyStatus.put(ltr, 
-                        currentKeyStatus < 2 ? 2 :
-                        currentKeyStatus
-                    );
+                    setSquareAndKeyColor(ltr, square, 2);
                     break;
             
                 default:
@@ -333,5 +323,19 @@ public class WerdillUI extends GraphicsGroup {
             canvas.pause(200);
         }
         refreshKeyboard();
+    }
+
+    private void setSquareAndKeyColor(String ltr, Rectangle square, Integer targetKeyStatus) {
+        Integer currentKeyStatus;
+        Color color = List.of(NOT_IN_COLOR, WRONG_POSITION_COLOR, RIGHT_POSITION_COLOR).get(targetKeyStatus);
+
+        square.setFillColor(color);
+        square.setStrokeColor(color);
+
+        currentKeyStatus = keyStatus.get(ltr);
+        keyStatus.put(ltr, 
+            currentKeyStatus < targetKeyStatus ? targetKeyStatus :
+            currentKeyStatus
+        );
     }
 }
