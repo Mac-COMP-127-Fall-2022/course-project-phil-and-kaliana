@@ -34,7 +34,7 @@ public class Checker {
         chooseSolution();
     }
 
-    private void chooseSolution() {
+    public void chooseSolution() {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
         // FOR TESTING, CHANGE AND UNCOMMENT BELOW LINE:

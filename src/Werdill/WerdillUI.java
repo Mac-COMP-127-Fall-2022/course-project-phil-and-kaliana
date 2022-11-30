@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import edu.macalester.graphics.events.Key;
+import edu.macalester.graphics.ui.Button;
 
 public class WerdillUI extends GraphicsGroup {
     private static final Color NOT_IN_COLOR = Color.GRAY;//new Color(0xafafaf);
@@ -27,6 +28,8 @@ public class WerdillUI extends GraphicsGroup {
     private int currentColumn;
     private final Rectangle[][] squares = new Rectangle[6][5];
     private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
+
+    private Integer gameNumber = 0;
 
     // <Keyboard>
     private final HashMap<String, Rectangle> keyboard = new HashMap<>();
@@ -55,6 +58,9 @@ public class WerdillUI extends GraphicsGroup {
                     label.setText("");
                 }
                 refreshGraphicsTextPositions();
+            // } else if (key == Key.Q) {  // TESTING
+            //     reset();                // TESTING
+            //     checker.chooseSolution();
             } else if (key == Key.LEFT_ARROW) {
                 shiftColumnLeft();
             } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
@@ -142,12 +148,49 @@ public class WerdillUI extends GraphicsGroup {
     }
 
     public void reset() {
+        if (gameNumber > 0) {
+            setUnselected();
+
+            currentColumn = 0;
+            currentRow = 0;
+
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 5; j++) {
+                    Rectangle square = squares[i][j];
+                    GraphicsText label = squareLabels[i][j];
+
+                    label.setFillColor(Color.BLACK);
+                    label.setText("");
+
+                    square.setFillColor(Color.WHITE);
+                    square.setStrokeColor(Color.BLACK);
+                }
+            }
+
+            for (String key : keyboard.keySet()) {
+                keyboard.get(key).setFillColor(Color.WHITE);
+                keyboard.get(key).setStrokeColor(Color.BLACK);
+
+                keyLabels.get(key).setFillColor(Color.BLACK);
+
+                keyStatus.put(key, -1);
+            }
+
+            gameNumber++;
+            setSelected();
+            canvas.draw();
+            
+            return;
+        }
+        
         currentRow = 0;
         currentColumn = 0;
-            
+        
         assembleArrayOfSquares();
         assembleArrayOfGraphicsTexts();
-
+        
+        gameNumber++;
+        setSelected();
         canvas.draw();
     }
 
@@ -193,6 +236,17 @@ public class WerdillUI extends GraphicsGroup {
         x = 0.75 * KEY_SIDE_LENGTH + SQUARE_PADDING;
         y += KEY_SIDE_LENGTH + KEY_PADDING;
         createKeyRow(x, y, List.of("Z", "X", "C", "V", "B", "N", "M"));
+        
+        Button resetButton = new Button("Reset");
+        resetButton.setPosition(keyboard.get("M").getX() + KEY_PADDING + KEY_SIDE_LENGTH, y);
+
+        resetButton.onClick(() -> {
+            reset();
+            checker.chooseSolution();
+        });
+
+        add(resetButton);
+        canvas.draw();
     }
 
     private void createKeyRow(double x, double y, List<String> keys) {
