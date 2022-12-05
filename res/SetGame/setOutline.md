@@ -13,16 +13,6 @@
     1. create board ui
     2. createDeck
 
-2. checkBoard()
-    1. if !Board.isFull()
-        1. if deck.length >= 3
-            1. addCards()
-    # OR
-    1. if Board.contains(null)
-        1. if deck.length >= 3
-            1. addCards()
-
-
 3. button that adds cards (() ->
             addCards())
 
@@ -50,10 +40,19 @@
 4. clearBoard()
     1. board = []
 
-5. cardUI()
+5. checkBoard()
+    1. if !Board.isFull()
+        1. if deck.length >= 3
+            1. addCards()
+    # OR
+    1. if Board.contains(null)
+        1. if deck.length >= 3
+            1. addCards()
+
+6. cardUI()
 //     make Shape with Fill and Color, Number times --> graphics group
 
-6. when a set is made (callback)
+7. when a set is made (callback)
     1. set the three cards to null
     2. if !isFull()
         1. addCards()
