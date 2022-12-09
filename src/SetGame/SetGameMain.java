@@ -1,12 +1,16 @@
 package SetGame;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import java.awt.Color;
 
 public class SetGameMain {
     // Instance Variables
     private SetUI gameUI;
     private ArrayList<Card> deck;
 
+    public static final int NUMBER_OF_TRAIT_VARIANTS = 3;
 
     // Instance Methods
     
@@ -34,11 +38,11 @@ public class SetGameMain {
 
     public void createDeck() {
         deck = new ArrayList<>();
-        for (int c = 0; c < 3; c++) {
-            for (int n = 0; n < 3; n++) {
-                for (int s = 0; s < 3; s++) {
-                    for (int f = 0; f < 3; f++) {
-                        deck.add(new Card(c, n, s, f));
+        for (int color = 0; color < NUMBER_OF_TRAIT_VARIANTS; color++) {
+            for (int number = 0; number < NUMBER_OF_TRAIT_VARIANTS; number++) {
+                for (int shape = 0; shape < NUMBER_OF_TRAIT_VARIANTS; shape++) {
+                    for (int fill = 0; fill < NUMBER_OF_TRAIT_VARIANTS; fill++) {
+                        deck.add(new Card(color, number, shape, fill));
                     }
                 }
             }

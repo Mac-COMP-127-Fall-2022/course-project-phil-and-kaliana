@@ -58,7 +58,7 @@
         1. addCards()
     3. remove any null cards
 
-## Cards
+## Card
 
 ### Instance Variables
 - priv `List<Int>` cardColors = [1, 2, 3]
