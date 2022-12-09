@@ -1,10 +1,13 @@
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Random;
+
 import org.junit.jupiter.api.Test;
 
 import SetGame.Card;
 import SetGame.SetGameMain;
+import edu.macalester.graphics.CanvasWindow;
 
 public class SetCheckerTest {
     SetGameMain testGame = new SetGameMain();
@@ -58,4 +61,5 @@ public class SetCheckerTest {
         Card cardC = new Card(2, 1, 0, 1);
         assertFalse(testGame.checkIfSet(cardA, cardB, cardC));
     }
+    
 }
