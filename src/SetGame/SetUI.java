@@ -12,6 +12,9 @@ public class SetUI extends GraphicsGroup {
     public ArrayList<Card> board;
     private ArrayList<Card> deck;
 
+    static final int SHAPE_WIDTH = 20;
+    static final int SHAPE_HEIGHT = 10;
+
     private Random rand = new Random();
 
     private final List<Color> colors = List.of(
@@ -54,29 +57,69 @@ public class SetUI extends GraphicsGroup {
         }
     }
 
-    // Create Cards
     void createCard(Card card){
+        ArrayList<GraphicsObject> shapes = new ArrayList<>();
         // trait 1 is number of
-        for (int i = 0; i < card.getTrait(1); i++) {
+        for (int i = 0; i <= card.getTrait(1); i++) {
             // trait 2 is shape
             switch (card.getTrait(2)) {
                 // trait 0 is color, trait 3 is fill
                 case 0:
-                    add(createTriangle(card.getTrait(0), card.getTrait(3)));
+                    shapes.add(createTriangle(card.getTrait(0), card.getTrait(3)));
                     break;
                 case 1:
-                    add(createDiamond(card.getTrait(0), card.getTrait(3)));
+                    shapes.add(createDiamond(card.getTrait(0), card.getTrait(3)));
                     break;
                 case 2:
-                    add(createRectangle(card.getTrait(0), card.getTrait(3)));
+                    shapes.add(createRectangle(card.getTrait(0), card.getTrait(3)));
                     break;
                 default:
-                    add(createTriangle(card.getTrait(0), card.getTrait(3)));
+                    shapes.add(createTriangle(card.getTrait(0), card.getTrait(3)));
                     break;
             }
         }
+        placeShapes(card, shapes);
     }
 
+    private void placeShapes(Card card, ArrayList<GraphicsObject> shapes) {
+        int x = Card.CARD_PADDING;
+        double y;
+
+        switch (shapes.size()) {
+            case 1:
+                GraphicsObject shape = shapes.get(0);
+                card.add(shape);
+                shape.setPosition(
+                    x, 
+                    card.getCenter().getY() - Card.CARD_HEIGHT/2.0
+                );
+                break;
+            case 2:
+                y = Card.CARD_HEIGHT/2.0 - Card.CARD_PADDING/2.0 - SHAPE_HEIGHT;
+                for (GraphicsObject item : shapes) {
+                    card.add(item);
+                    item.setPosition(
+                        x, 
+                        item.getCenter().getY() - Card.CARD_HEIGHT/2.0
+                    );
+                    y += SHAPE_HEIGHT + Card.CARD_PADDING;
+                }
+                break;
+            case 3:
+                y = Card.CARD_PADDING;
+                for (GraphicsObject item : shapes) {
+                    card.add(item);
+                    item.setPosition(
+                        x,
+                        y
+                    );
+                    y += Card.CARD_HEIGHT + Card.CARD_PADDING;
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
     private Color getColorFromInt(int colorInt, int fillInt) {
         if (fillInt == 1) {
@@ -93,8 +136,8 @@ public class SetUI extends GraphicsGroup {
         // crying
         Path triangle = Path.makeTriangle(
             0, 0,
-            10, 10,
-            20, 0
+            SHAPE_WIDTH/2.0, SHAPE_HEIGHT,
+            SHAPE_WIDTH, 0
         );
         
         triangle.setFillColor(getColorFromInt(color, fill));
@@ -106,10 +149,10 @@ public class SetUI extends GraphicsGroup {
     private Path createDiamond(int color, int fill){
         // more crying
         Path diamond = new Path(List.of(
-            new Point(0, 5),
-            new Point(10, 10),
-            new Point(20, 5),
-            new Point(10, 0)
+            new Point(0, SHAPE_HEIGHT/2.0),
+            new Point(SHAPE_WIDTH/2.0, SHAPE_HEIGHT),
+            new Point(SHAPE_WIDTH, SHAPE_HEIGHT/2.0),
+            new Point(SHAPE_WIDTH/2.0, 0)
         ));
         
         diamond.setFillColor(getColorFromInt(color, fill));
@@ -122,7 +165,7 @@ public class SetUI extends GraphicsGroup {
         // even more crying
         Rectangle rect = new Rectangle(
             0, 0,
-            20, 10
+            SHAPE_WIDTH, SHAPE_HEIGHT
         );
         
         rect.setFillColor(getColorFromInt(color, fill));

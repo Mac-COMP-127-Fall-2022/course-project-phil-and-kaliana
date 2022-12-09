@@ -12,8 +12,6 @@ public class WerdillGame {
     private final WerdillUI ui;
     private final Checker checker;
 
-    // private final Random rand = new Random();
-
     private final CanvasWindow canvas;
 
     WerdillGame() throws IOException {

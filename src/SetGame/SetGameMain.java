@@ -54,7 +54,7 @@ public class SetGameMain {
         createDeck();
     }
     
-    public static void main() {
+    public static void main(String[] args) {
         SetGameMain game = new SetGameMain();
         game.startGame();
     }
