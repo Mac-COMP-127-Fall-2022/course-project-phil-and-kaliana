@@ -45,6 +45,9 @@ public class WerdillUI extends GraphicsGroup {
         this.checker = checker;
 
         canvas.onKeyDown((event) -> { //TODO: needs refactoring into smaller methods
+            if (currentRow >= 6) {
+                return;
+            }
             Key key = event.getKey();
             if (key == Key.RETURN_OR_ENTER) {
                 sumbitGuess();
@@ -58,9 +61,6 @@ public class WerdillUI extends GraphicsGroup {
                     label.setText("");
                 }
                 refreshGraphicsTextPositions();
-            // } else if (key == Key.Q) {  // TESTING
-            //     reset();                // TESTING
-            //     checker.chooseSolution();
             } else if (key == Key.LEFT_ARROW) {
                 shiftColumnLeft();
             } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
@@ -140,10 +140,16 @@ public class WerdillUI extends GraphicsGroup {
     }
 
     private void setSelected() {
+        if (currentRow >= 6) {
+            return;
+        }
         squares[currentRow][currentColumn].setStrokeWidth(SQUARE_PADDING/2);
     }
     
     private void setUnselected() {
+        if (currentRow >= 6) {
+            return;
+        }
         squares[currentRow][currentColumn].setStrokeWidth(1);
     }
 

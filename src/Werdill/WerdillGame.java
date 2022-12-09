@@ -25,10 +25,6 @@ public class WerdillGame {
         
         canvas.add(ui);
     }
-
-    private void reset() {
-
-    }
     
     public static void main(String[] args) throws IOException {
         new WerdillGame();
