@@ -5,13 +5,15 @@ import java.util.List;
 import java.util.Random;
 
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.Rectangle;
 
 import java.awt.Color;
 
 public class SetGameMain {
     // Instance Variables
     private SetUI gameUI;
-    private ArrayList<Card> deck;
+    private ArrayList<Card> deck = new ArrayList<>();
 
     public static final int NUMBER_OF_TRAIT_VARIANTS = 3;
 
@@ -31,6 +33,13 @@ public class SetGameMain {
 
             card.setPosition(Card.CARD_WIDTH, Card.CARD_HEIGHT);
             
+            GraphicsObject elementAt = canvas.getElementAt(event.getPosition());
+            System.out.println(elementAt.getClass());
+            if (elementAt != null && elementAt.getClass() == Rectangle.class) {
+                ((Rectangle) elementAt).setStrokeColor(Color.RED);
+                ((Rectangle) elementAt).setStrokeWidth(Card.SHAPE_AND_CARD_STROKE_WIDTH + 1);
+            }
+
             canvas.draw();
         });
     }
@@ -38,43 +47,7 @@ public class SetGameMain {
     // END TEST METHOD
 
     public SetGameMain() {
-        canvas = new CanvasWindow("Set", 700, 800);
-        // Card card = new Card(1, 0, 0, 0);
-        // canvas.add(
-        //     card
-        // );
-        // card.setPosition(100, 50);
-        // card = new Card(1, 1, 1, 1);
-        // canvas.add(
-        //     card
-        //     );
-        // card.setPosition(300, 50);
-        // card = new Card(1, 2, 2, 2);
-        // canvas.add(
-        //     card
-        // );
-        // card.setPosition(500, 50);
-    }
-
-    public boolean checkIfSet(Card cardA, Card cardB, Card cardC) {
-        return (checkTrait(cardA, cardB, cardC, 0) &&
-                checkTrait(cardA, cardB, cardC, 1) &&
-                checkTrait(cardA, cardB, cardC, 2) &&
-                checkTrait(cardA, cardB, cardC, 3)
-        );
-    }
-
-    boolean checkTrait(Card cardA, Card cardB, Card cardC, Integer t) {
-        if ((cardA.getTrait(t) == cardB.getTrait(t)) && (cardA.getTrait(t) == cardC.getTrait(t))) {
-            return true;
-        }
-        else if (!(cardA.getTrait(t) == cardB.getTrait(t)) &&
-                 !(cardA.getTrait(t) == cardC.getTrait(t)) &&
-                 !(cardB.getTrait(t) == cardC.getTrait(t))) {
-            return true;
-        } else {
-            return false;
-        }
+        canvas = new CanvasWindow("Set", 1200, 800);
     }
 
     public void createDeck() {
@@ -91,13 +64,14 @@ public class SetGameMain {
     }
 
     public void startGame(){
-        gameUI = new SetUI(deck);
         createDeck();
+        gameUI = new SetUI(deck, canvas);
+        canvas.add(gameUI);
     }
     
     public static void main(String[] args) {
         SetGameMain game = new SetGameMain();
-        game.visualCardTest();
-        // game.startGame();
+        // game.visualCardTest();
+        game.startGame();
     }
 }

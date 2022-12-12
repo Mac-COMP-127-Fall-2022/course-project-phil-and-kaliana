@@ -27,6 +27,8 @@ public class Card extends GraphicsGroup {
     public static final int SHAPE_WIDTH = 80;
     public static final int SHAPE_HEIGHT = 40;
 
+    public static final int SHAPE_AND_CARD_STROKE_WIDTH = 2;
+
     private final List<Color> colors = List.of(
         Color.RED,
         new Color(0, 200, 0),
@@ -46,6 +48,7 @@ public class Card extends GraphicsGroup {
         this.fill = fill;
 
         cardBase = new Rectangle(0, 0, CARD_WIDTH, CARD_HEIGHT);
+        cardBase.setStrokeWidth(SHAPE_AND_CARD_STROKE_WIDTH);
         add(cardBase);
 
         ArrayList<GraphicsObject> shapes = new ArrayList<>();
@@ -148,13 +151,14 @@ public class Card extends GraphicsGroup {
     private Path createTriangle(int color, int fill){
         // crying
         Path triangle = Path.makeTriangle(
-            0, 0,
-            SHAPE_WIDTH/2.0, SHAPE_HEIGHT,
-            SHAPE_WIDTH, 0
+            0, SHAPE_HEIGHT,
+            SHAPE_WIDTH/2.0, 0,
+            SHAPE_WIDTH, SHAPE_HEIGHT
         );
         
         triangle.setFillColor(getColorFromInt(color, fill));
         triangle.setStrokeColor(colors.get(color));
+        triangle.setStrokeWidth(SHAPE_AND_CARD_STROKE_WIDTH);
 
         return triangle;
     }
@@ -170,20 +174,28 @@ public class Card extends GraphicsGroup {
         
         diamond.setFillColor(getColorFromInt(color, fill));
         diamond.setStrokeColor(colors.get(color));
+        diamond.setStrokeWidth(SHAPE_AND_CARD_STROKE_WIDTH);
 
         return diamond;
     }
 
-    private Rectangle createRectangle(int color, int fill){
+    private Path createRectangle(int color, int fill){
         // even more crying
-        Rectangle rect = new Rectangle(
-            0, 0,
-            SHAPE_WIDTH, SHAPE_HEIGHT
+        Path rect = new Path(
+            new Point(0, 0),
+            new Point(SHAPE_WIDTH, 0),
+            new Point(SHAPE_WIDTH, SHAPE_HEIGHT),
+            new Point(0, SHAPE_HEIGHT)
         );
         
         rect.setFillColor(getColorFromInt(color, fill));
         rect.setStrokeColor(colors.get(color));
+        rect.setStrokeWidth(SHAPE_AND_CARD_STROKE_WIDTH);
 
         return rect;
+    }
+
+    public Rectangle getCardBase() {
+        return cardBase;
     }
 }
