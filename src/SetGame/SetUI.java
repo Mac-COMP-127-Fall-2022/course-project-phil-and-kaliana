@@ -150,6 +150,7 @@ public class SetUI extends GraphicsGroup {
             if (deck.size() >= 3) {
                 addCards();
             }
+            refreshBoard();
         } else {
             refreshBoard();
         }
