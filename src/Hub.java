@@ -3,7 +3,9 @@ import java.io.IOException;
 import SetGame.SetGameMain;
 import Werdill.WerdillGame;
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.Image;
 import edu.macalester.graphics.ui.Button;
+
 
 public class Hub {
     private final CanvasWindow canvas;
@@ -15,7 +17,12 @@ public class Hub {
     private Button setButton;
 
     public Hub() throws IOException {
-        canvas = new CanvasWindow(null, 100, 250);
+        canvas = new CanvasWindow("7509Mythic Arcade", 400, 600);
+
+        Image background = new Image("background.png"); 
+        // The library wouldn't load the background from the res directory (see Image line 41; it unnecessarily adds a "/" to the path--please fix that!)
+        background.setMaxHeight(600);
+        canvas.add(background);
 
         werdillButton = new Button("Werdill");
         setButton = new Button("Set");
