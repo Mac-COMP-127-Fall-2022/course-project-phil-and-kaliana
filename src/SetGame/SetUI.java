@@ -1,7 +1,6 @@
 package SetGame;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import edu.macalester.graphics.*;
 import edu.macalester.graphics.events.Key;
@@ -27,20 +26,22 @@ public class SetUI extends GraphicsGroup {
         this.deck = deck;
         this.canvas = canvas;
 
+        // Adds 12 random cards from the deck
         for (int i = 0; i < 12; i++) {
             int index = rand.nextInt(deck.size());
             board.add(deck.get(index));
             deck.remove(index);
         }
-        
+    
+        // Refreshes board UI
         refreshBoard();
 
         add(cardsLeft);
         refreshLabels();
 
+        // When a card is clicked, click card
         canvas.onClick((event) -> {
             GraphicsObject elementAt = canvas.getElementAt(event.getPosition());
-            // System.out.println(elementAt.getClass());
             if (elementAt != null && elementAt.getClass() == Rectangle.class) {
                 for (Card card : board) {
                     if (card.getCardBase() == elementAt) {
@@ -52,6 +53,7 @@ public class SetUI extends GraphicsGroup {
             }     
         });
 
+        // When key 3 is pressed and the board <= 21 add three cards
         canvas.onKeyDown((key) -> {
             if (key.getKey() == Key.NUM_3 && board.size() + 3 <= 21) {
                 addCards();
@@ -60,7 +62,7 @@ public class SetUI extends GraphicsGroup {
     }
 
     private void refreshLabels() {
-        cardsLeft.setText("Cards Used: " + usedCards.size() + "     " + "Used Left: " + deck.size());
+        cardsLeft.setText("Cards Used: " + usedCards.size() + "     " + "Cards Left: " + deck.size());
         cardsLeft.setPosition(
             canvas.getWidth()/2 - cardsLeft.getWidth()/2,
             50
@@ -68,14 +70,16 @@ public class SetUI extends GraphicsGroup {
         canvas.draw();
     }
 
+    // After the card is clicked...
     private void doCardClick(Card cardClicked) {
         Rectangle cardBase = cardClicked.getCardBase();
+        // If it is already selected, deselect it and remove it from the selectedCards list
         if (selectedCards.contains(cardClicked)) {
             cardBase.setStrokeColor(Color.BLACK);
             cardBase.setStrokeWidth(Card.SHAPE_AND_CARD_STROKE_WIDTH);
 
             selectedCards.remove(cardClicked);
-        } else {
+        } else { // otherwise, if not already selected, select it and add to selectedCards list
             cardBase.setStrokeColor(Color.RED);
             cardBase.setStrokeWidth(Card.SHAPE_AND_CARD_STROKE_WIDTH + 1);
 
@@ -84,19 +88,20 @@ public class SetUI extends GraphicsGroup {
 
         canvas.draw();
 
+        // Once selectedCards list has 3 cards, check if it's a set
         if (selectedCards.size() == 3) {
             if (checkIfSet(
                 selectedCards.get(0),
                 selectedCards.get(1),
                 selectedCards.get(2)
-            )) {
+            )) { // If so, remove the cards from the list and add them to used cards
                 for (Card card : selectedCards) {
                     board.remove(card);
                     usedCards.add(card);
                     remove(card);
                 }
                 checkBoard();
-            } else {
+            } else { // Otherwise, if not a set, deselect them
                 for (Card card : selectedCards) {
                     card.getCardBase().setStrokeColor(Color.BLACK);
                     card.getCardBase().setStrokeWidth(Card.SHAPE_AND_CARD_STROKE_WIDTH);
@@ -110,6 +115,7 @@ public class SetUI extends GraphicsGroup {
         board.clear();
     }
 
+    // When checking a set of 3 cards, check each trait
     public boolean checkIfSet(Card cardA, Card cardB, Card cardC) {
         return (checkTrait(cardA, cardB, cardC, 0) &&
                 checkTrait(cardA, cardB, cardC, 1) &&
@@ -118,19 +124,24 @@ public class SetUI extends GraphicsGroup {
         );
     }
 
+    // For each trait
     boolean checkTrait(Card cardA, Card cardB, Card cardC, Integer t) {
+        // Checks if they're all the same
         if ((cardA.getTrait(t) == cardB.getTrait(t)) && (cardA.getTrait(t) == cardC.getTrait(t))) {
             return true;
         }
+        // or if they're all different
         else if (!(cardA.getTrait(t) == cardB.getTrait(t)) &&
                  !(cardA.getTrait(t) == cardC.getTrait(t)) &&
                  !(cardB.getTrait(t) == cardC.getTrait(t))) {
             return true;
         } else {
+            // Otherwise
             return false;
         }
     }
 
+    // Adds 3 random cards from the deck
     private void addCards() {
         for (int i = 0; i < 3; i++) {
             int choice = rand.nextInt(deck.size());
@@ -145,6 +156,7 @@ public class SetUI extends GraphicsGroup {
         return (board.size() >= 12);
     }
 
+    // Checks if the board needs to add 3 cards
     private void checkBoard() {
         if (!this.isFull()){
             if (deck.size() >= 3) {
@@ -156,6 +168,7 @@ public class SetUI extends GraphicsGroup {
         }
     }
 
+    // Refreshes Board UI
     private void refreshBoard() {
         double x;
         int y = 100;
