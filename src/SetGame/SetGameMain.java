@@ -20,34 +20,11 @@ public class SetGameMain {
     public final CanvasWindow canvas;
 
     // Instance Methods
-    
-    // TEST METHOD
-
-    void visualCardTest() {
-        Random rand = new Random();
-        canvas.onClick((event) -> {
-            canvas.removeAll();
-
-            Card card = new Card(rand.nextInt(3), rand.nextInt(3), rand.nextInt(3), rand.nextInt(3));
-            canvas.add(card);
-
-            card.setPosition(Card.CARD_WIDTH, Card.CARD_HEIGHT);
-            
-            GraphicsObject elementAt = canvas.getElementAt(event.getPosition());
-            System.out.println(elementAt.getClass());
-            if (elementAt != null && elementAt.getClass() == Rectangle.class) {
-                ((Rectangle) elementAt).setStrokeColor(Color.RED);
-                ((Rectangle) elementAt).setStrokeWidth(Card.SHAPE_AND_CARD_STROKE_WIDTH + 1);
-            }
-
-            canvas.draw();
-        });
-    }
-
-    // END TEST METHOD
 
     public SetGameMain() {
         canvas = new CanvasWindow("Set", 1200, 800);
+
+        startGame();
     }
 
     public void createDeck() {
@@ -71,7 +48,5 @@ public class SetGameMain {
     
     public static void main(String[] args) {
         SetGameMain game = new SetGameMain();
-        // game.visualCardTest();
-        game.startGame();
     }
 }

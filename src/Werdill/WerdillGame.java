@@ -14,7 +14,7 @@ public class WerdillGame {
 
     private final CanvasWindow canvas;
 
-    WerdillGame() throws IOException {
+    public WerdillGame() throws IOException {
 
         checker = new Checker();
 
