@@ -60,7 +60,7 @@ public class SetUI extends GraphicsGroup {
     }
 
     private void refreshLabels() {
-        cardsLeft.setText("Cards Left: " + deck.size() + "     " + "Used Cards: " + usedCards.size());
+        cardsLeft.setText("Cards Used: " + usedCards.size() + "     " + "Used Left: " + deck.size());
         cardsLeft.setPosition(
             canvas.getWidth()/2 - cardsLeft.getWidth()/2,
             50
