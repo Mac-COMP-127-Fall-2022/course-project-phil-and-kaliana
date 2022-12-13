@@ -29,12 +29,14 @@ public class Card extends GraphicsGroup {
 
     public static final int SHAPE_AND_CARD_STROKE_WIDTH = 2;
 
+    // List of base colors 
     private final List<Color> colors = List.of(
         Color.RED,
         new Color(0, 200, 0),
         Color.BLUE
     );
 
+    // List of lighter versions of colors (instead of lined)
     private final List<Color> halfColors = List.of(
         new Color(255, 127, 127),
         new Color(200, 255, 200),
@@ -52,11 +54,11 @@ public class Card extends GraphicsGroup {
         add(cardBase);
 
         ArrayList<GraphicsObject> shapes = new ArrayList<>();
-        // trait 1 is number of
+        // trait 1 is number of shapes in a card
         for (int i = 0; i <= getTrait(1); i++) {
             // trait 2 is shape
             switch (getTrait(2)) {
-                // trait 0 is color, trait 3 is fill
+                // trait 0 is color, trait 3 is fill/shading. Trait 0/default is Triangle, 1 is Diamond, and 2 is Rectangle
                 case 0:
                     shapes.add(createTriangle(getTrait(0), getTrait(3)));
                     break;
@@ -74,6 +76,7 @@ public class Card extends GraphicsGroup {
         placeShapes(shapes);
     }
 
+    // gets trait. 0 is color, 1 is number, 2 is shape, 3 is fill/shading
     public Integer getTrait(int trait){
         switch (trait) {
             case 0:
@@ -93,10 +96,8 @@ public class Card extends GraphicsGroup {
         }
     }
 
-    void createCard(Card card){
-        
-    }
-
+    // Place shapes within the card. Starting at x of card padding
+    // and a y that depends on amount of items in the card.
     private void placeShapes(ArrayList<GraphicsObject> shapes) {
         int x = CARD_PADDING;
         double y;
@@ -137,6 +138,7 @@ public class Card extends GraphicsGroup {
         }
     }
 
+    // Returns the color of fill based on its color AND fill status (aka full, half full or empty)
     private Color getColorFromInt(int colorInt, int fillInt) {
         if (fillInt == 1) {
             return halfColors.get(colorInt);

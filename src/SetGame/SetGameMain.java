@@ -1,14 +1,8 @@
 package SetGame;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsObject;
-import edu.macalester.graphics.Rectangle;
-
-import java.awt.Color;
 
 public class SetGameMain {
     // Instance Variables
@@ -20,13 +14,13 @@ public class SetGameMain {
     public final CanvasWindow canvas;
 
     // Instance Methods
-
     public SetGameMain() {
         canvas = new CanvasWindow("Set", 1200, 800);
 
         startGame();
     }
 
+    // Iterates through each trait and creates a unique card for each one
     public void createDeck() {
         deck = new ArrayList<>();
         for (int color = 0; color < NUMBER_OF_TRAIT_VARIANTS; color++) {
@@ -40,6 +34,7 @@ public class SetGameMain {
         }
     }
 
+    // Start game
     public void startGame(){
         createDeck();
         gameUI = new SetUI(deck, canvas);
