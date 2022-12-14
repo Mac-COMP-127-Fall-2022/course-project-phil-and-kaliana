@@ -17,15 +17,24 @@ public class Hub {
     private Button setButton;
 
     public Hub() throws IOException {
-        canvas = new CanvasWindow("7509Mythic Arcade", 400, 600);
+        canvas = new CanvasWindow("7509Mythic Arcade", 400, 400);
 
         Image background = new Image("background.png"); 
         // The library wouldn't load the background from the res directory (see Image line 41; it unnecessarily adds a "/" to the path--please fix that!)
-        background.setMaxHeight(600);
+        background.setMaxHeight(400);
         canvas.add(background);
 
         werdillButton = new Button("Werdill");
         setButton = new Button("Set");
+
+        werdillButton.setPosition(
+            canvas.getWidth()/2 - werdillButton.getWidth()/2, 
+            canvas.getHeight()/2 - 20
+        );
+        setButton.setPosition(
+            canvas.getWidth()/2 - setButton.getWidth()/2, 
+            canvas.getHeight()/2 + 20
+        );
 
         werdillButton.onClick(() -> {
             try {
@@ -36,7 +45,7 @@ public class Hub {
             new SetGameMain();
         });
 
-        setButton.setPosition(0, 40);
+        // setButton.setPosition(0, 40);
 
         canvas.add(setButton);
         canvas.add(werdillButton);
