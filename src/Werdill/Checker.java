@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Checker {
+    // not final so Checker may be reused in the case of a reset.
     private String[] solution;
 
     private final List<String> words;
@@ -19,14 +20,6 @@ public class Checker {
 
     private Random rand = new Random();
 
-    public String[] getSolution() {
-        return solution;
-    }
-
-    public void setSolution(String newSolution) { // NOTE: switch to private if not unit testing
-        solution = newSolution.toUpperCase().split("");
-    }
-
     public Checker() throws IOException {
         words = Files.lines(Path.of(WORD_LIST_PATH)).toList();
         solutions = Files.lines(Path.of(SOLUTIONS_PATH)).toList();
@@ -34,6 +27,17 @@ public class Checker {
         chooseSolution();
     }
 
+    public String[] getSolution() {
+        return solution;
+    }
+
+    private void setSolution(String newSolution) {
+        solution = newSolution.toUpperCase().split("");
+    }
+
+    /**
+     * Changes Checker's correct solution to a new, random choice.
+     */
     public void chooseSolution() {
         int index = rand.nextInt(solutions.size());
         setSolution(solutions.get(index));
@@ -45,37 +49,50 @@ public class Checker {
         return words;
     }
 
+    /**
+     * Check the guess against the selected solution.
+     * 
+     * Legend; returned integers' meanings:
+     *  0 = letter not in solution
+     *  1 = letter in solution but wrong position
+     *  2 = letter in correct position
+     * @param guess
+     * @return 
+     */
     public Integer[] check(String[] guess) {
-        //TODO: Check is in word list
+        // Ensures all letter are lowercase
         String guessString = "";
         for (String ltr : guess) {
             guessString += ltr.toLowerCase();
         }
+        // Reject non-words
         if (!words.contains(guessString)) {
             return null;
         }
 
+        // Clone solution so letters are not inadvertently removed from primary instance variable
         ArrayList<String> solutionCopy = new ArrayList<>(Arrays.asList(solution));
-
+        
+        // Creates returned Integer Array
         Integer[] ret = new Integer[]{0, 0, 0, 0, 0};
-        // <testVersion>\
+        // Checks ALL letters for *exact,* correct position. 
+        // Removes letter from guess Array if it is in the right spot (avoid false yellow boxes)
         for (int i = 0; i < 5; i++) {
             if (guess[i].equals(solutionCopy.get(i))) {
                 ret[i] = 2;
                 guess[i] = "";
-                solutionCopy.set(i, "") ;//= "";
+                solutionCopy.set(i, "") ;
             }
         }
+        // Checks if solution contains each letter
+        // Again, removes letters once checked to avoid false positives.
         for (int i = 0; i < 5; i++) {
             if (solutionCopy.contains(guess[i]) && ret[i] == 0) {
                 ret[i] = 1;
-                solutionCopy.remove(solutionCopy.indexOf(guess[i])) ;//= "";
+                solutionCopy.remove(solutionCopy.indexOf(guess[i]));
                 guess[i] = "";
             }
-            // ret[i] = 0;
-            // guess[i] = "";
         }
-        // </testVersion>
         return ret;
     }
 }
