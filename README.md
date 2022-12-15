@@ -1,5 +1,4 @@
-# Project 7509Mythic, Arcade Game
-Names of your team members: Kaliana Andriamananjara and Phil Reitz-Jones
+# Project 7509Mythic, Arcade Game, by Kaliana Andriamananjara and Phil Reitz-Jones
 
 After running code from Hub, a hub window will appear and show you two buttons: Set or Werdill.
 
@@ -11,9 +10,11 @@ You can click either (or both) buttons in the hub as many times as you want. It 
 
 While both games Set and Wordle already exist (Werdill inspired from the New York Times game Wordle and Set, which was created by Marsha Jean Falco), all of the code and graphics are our own. The only visual element borrowed was the hub's geometric background, which was free to use on the internet.
 
-The shapes and shading in the case of Set are not as distinct and unique as the original Set game. This makes it a bit harder to recognize different possible sets.
+The shapes and shading in the case of Set are not as distinct and unique as the original Set game. This makes it a bit harder for a user to recognize different possible sets, and selecting cards is difficult because of the way we used graphics.
 
 It is true that our project is not particularly accessible. It has no special features or programming to accommodate special HID devices--it can only use keyboard input. In this case, the libraries we used and our skill in Java was probably insufficient to accomplish this.
 
 Something that might help with accessibility in the future, which one online Set Game uses, is that in addition to being able to click cards, one can also select via keyboard keys associated with each cards' placement. This could be implimented in the future.
+
+Thank you, Kaliana Andriamananjara and Phil Reitz-Jones
 
