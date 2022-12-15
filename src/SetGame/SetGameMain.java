@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import edu.macalester.graphics.CanvasWindow;
 
+/**
+ * Class that controls a Set Game.
+ * 
+ * @author Phil Reitz-Jones
+ * @author Kaliana Andriamananjara
+ */
 public class SetGameMain {
     // Instance Variables
     private SetUI gameUI;

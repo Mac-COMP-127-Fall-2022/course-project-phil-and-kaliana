@@ -10,6 +10,13 @@ import edu.macalester.graphics.Path;
 import edu.macalester.graphics.Point;
 import edu.macalester.graphics.Rectangle;
 
+/**
+ * Class representing a Set Game's Card values, traits and UI.
+ * 
+ * @author Phil Reitz-Jones
+ * @author Kaliana Andriamananjara
+ */
+
 public class Card extends GraphicsGroup {
     private int color;
     private int num;

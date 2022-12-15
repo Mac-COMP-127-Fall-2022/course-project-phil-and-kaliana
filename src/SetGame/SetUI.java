@@ -11,7 +11,12 @@ import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Rectangle;
 import edu.macalester.graphics.events.Key;
 
-
+/**
+ * Class representing a Set Game's general board UI and controlling the placement of a Card's UI.
+ * 
+ * @author Phil Reitz-Jones
+ * @author Kaliana Andriamananjara
+ */
 public class SetUI extends GraphicsGroup {
     private ArrayList<Card> board = new ArrayList<>();
     private ArrayList<Card> deck;
