@@ -1,10 +1,17 @@
 package Werdill;
 
 import java.io.IOException;
-// import java.util.Random;
 
 import edu.macalester.graphics.CanvasWindow;
 
+/**
+ * Main class for Werdill. Creates the CanvasWindow of appropriate size for the game. Contains
+ * a main() method for convenient, standalone use/testing, but it may also be instantiated
+ * and accessed by a Hub. 
+ * 
+ * @author Phil Reitz-Jones
+ * @author Kaliana Andriamananjara
+ */
 public class WerdillGame {
     private static final int CANVAS_WIDTH = 600;
     private static final int CANVAS_HEIGHT = 800;

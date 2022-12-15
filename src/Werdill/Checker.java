@@ -8,6 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This class contains Werdill's solution and the logic for checking guesses against it. Contains
+ * a public method (chooseSolution) that allows the same Checker to be used for multiple rounds.
+ * 
+ * @author Kaliana Andriamananjara
+ * @author Phil Reitz-Jones
+ */
 public class Checker {
     // not final so Checker may be reused in the case of a reset.
     private String[] solution;
