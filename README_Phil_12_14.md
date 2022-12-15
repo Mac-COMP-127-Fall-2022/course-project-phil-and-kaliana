@@ -27,4 +27,3 @@ Info about your project goes here
         3. Could there be unintended consequences of your software creation?
     
     Note that you do not need to fix every problem you identify. Our goal is for you to develop an awareness of these issues early on in your computing journey. Being able to identify and raise ethical concerns in your software work is an important skill to have. We want you to start developing that skill now.
-    > It is true that our project is not particularly accessible. It has no special features or programming to accommodate special HID devices--it can only use keyboard input. In this case, the libraries we used and our skill in Java was probably insufficient to accomplish this. {...}
