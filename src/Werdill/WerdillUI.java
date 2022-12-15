@@ -10,20 +10,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import edu.macalester.graphics.events.Key;
+import edu.macalester.graphics.events.KeyboardEvent;
 import edu.macalester.graphics.ui.Button;
 
 public class WerdillUI extends GraphicsGroup {
-    public static final Color NOT_IN_COLOR = Color.GRAY;//new Color(0xafafaf);
+    public static final Color NOT_IN_COLOR = Color.GRAY;
     public static final Color WRONG_POSITION_COLOR = new Color(0xffc900);
     public static final Color RIGHT_POSITION_COLOR = new Color(0x049c00);
-
-    public static final int SQUARE_SIDE_LENGTH = 60;
-    public static final int SQUARE_PADDING = 10;
-
-    private int currentRow;
-    private int currentColumn;
-    private final Rectangle[][] squares = new Rectangle[6][5];
-    private final GraphicsText[][] squareLabels = new GraphicsText[6][5];
 
     private Integer gameNumber = 0;
 
@@ -32,269 +25,68 @@ public class WerdillUI extends GraphicsGroup {
 
     private final Keyboard keyboard;
 
+    public Keyboard getKeyboard() {
+        return keyboard;
+    }
+
+    private final Grid grid;
+
     public WerdillUI(CanvasWindow canvas, Checker checker) {
         this.canvas = canvas;
         this.checker = checker;
 
+        this.keyboard = new Keyboard(canvas, this);
+        this.grid = new Grid(canvas, this);
+
         canvas.onKeyDown((event) -> {
-            if (currentRow >= 6) {
-                return;
-            }
-            Key key = event.getKey();
-            if (key == Key.RETURN_OR_ENTER) {
-                sumbitGuess();
-            } 
-            if (key == Key.DELETE_OR_BACKSPACE) {
-                GraphicsText label = squareLabels[currentRow][currentColumn];
-                if (label.getText() == "") {
-                    shiftColumnLeft();
-                } else {
-                    label.setText("");
-                }
-                refreshGraphicsTextPositions();
-            } else if (key == Key.LEFT_ARROW) {
-                shiftColumnLeft();
-            } else if (key == Key.RIGHT_ARROW || key == Key.SPACE) {
-                shiftColumnRight();
-            } else if ("QWERTYUIOPASDFGHJKLZXCVBNM".contains(key.toString()) && currentColumn < 5) {
-                setNextSquareToLtr(key);
-            }
+            keyDownCallback(event);
         });
 
-        this.keyboard = new Keyboard(canvas, this);
-        
-        reset();
-        keyboard.assembleKeyboard();
-        setPosition(canvas.getWidth()/2 - getWidth()/2 - SQUARE_PADDING, canvas.getHeight()/2 - getHeight()/2 - SQUARE_PADDING);
+        grid.assemble();
+        keyboard.assemble();
+        setPosition(canvas.getWidth()/2 - getWidth()/2 - Grid.SQUARE_PADDING, canvas.getHeight()/2 - getHeight()/2 - Grid.SQUARE_PADDING);
     }
 
     public Checker getChecker() {
         return checker;
     }
 
-    private void setNextSquareToLtr(Key key) {
-        GraphicsText label = squareLabels[currentRow][currentColumn];
-        label.setText(key.toString());
-        refreshGraphicsTextPositions();
-        shiftColumnRight();
+    private void keyDownCallback(KeyboardEvent event) {
+        if (grid.getCurrentRow() >= 6) {
+            return;
+        }
+        Key key = event.getKey();
+        if (key == Key.RETURN_OR_ENTER) {
+            sumbitGuess();
+        }
+        grid.onKeyDown(key);
     }
 
     private void sumbitGuess() {
-        for (int i = 0; i < 5; i++) {
-            if (squareLabels[currentRow][i].getText() == "") {
+        String[] guess = grid.getGuess();
+        for (String ltr : guess) {
+            if (ltr == "" || ltr == " ") {
                 return;
             }
         }
 
-        String[] guess = getGuess();
         Integer[] checked = checker.check(guess);
 
         if (checked == null) {
-            doInvalidGuess();
             return;
         }
 
-        setUnselected();
-        currentColumn = 0;
-        
-        setCurrentRowTo(checked);
-
-        currentRow += 1;
-        setSelected();
-    }
-
-    private void doInvalidGuess() {
-        return;
-    }
-    
-    private String[] getGuess() {
-        String[] ret = new String[5];
-        for (int i = 0; i < 5; i++) {
-            ret[i] = squareLabels[currentRow][i].getText();
-        }
-        return ret;
-    }
-
-    private void shiftColumnRight() {
-        if (currentColumn > 3) {
-            return;
-        }
-
-        setUnselected();
-        currentColumn++;
-        setSelected();
-    }
-    
-    private void shiftColumnLeft() {
-        if (currentColumn < 1) {
-            return;
-        }
-
-        setUnselected();
-        currentColumn--;
-        setSelected();
-    }
-
-    private void setSelected() {
-        if (currentRow >= 6) {
-            return;
-        }
-        squares[currentRow][currentColumn].setStrokeWidth(SQUARE_PADDING/2);
-    }
-    
-    private void setUnselected() {
-        if (currentRow >= 6) {
-            return;
-        }
-        squares[currentRow][currentColumn].setStrokeWidth(1);
-    }
-
-    private void assembleArrayOfSquares() {
-        int x = SQUARE_PADDING;
-        int y = SQUARE_PADDING;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                newSquare(x, y, i, j);
-                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-            }
-
-            x = SQUARE_PADDING;
-            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-        }
-    }
-
-    private void assembleArrayOfGraphicsTexts() {
-        int x = SQUARE_PADDING;
-        int y = SQUARE_PADDING;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                newSquareGraphicsText(x, y, i, j);
-                x += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-            }
-
-            x = SQUARE_PADDING;
-            y += SQUARE_PADDING + SQUARE_SIDE_LENGTH;
-        }
-    }
-
-    private void refreshGraphicsTextPositions() {
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                Rectangle square = squares[i][j];
-                GraphicsText label = squareLabels[i][j];
-                
-                double dx = square.getCenter().getX() - label.getCenter().getX();
-                double dy = square.getCenter().getY() - label.getCenter().getY();
-
-                label.moveBy(dx, dy);
-            }
-        }
-    }
-
-    private void newSquare(int x, int y, int row, int column) {
-        Rectangle nextSquare = new Rectangle(x, y, SQUARE_SIDE_LENGTH, SQUARE_SIDE_LENGTH);
-        add(nextSquare);
-        
-        squares[row][column] = nextSquare;
-    }
-
-    private void newSquareGraphicsText(int x, int y, int row, int column) {
-        GraphicsText nextLabel = new GraphicsText("", x, y);
-        nextLabel.setFontSize(SQUARE_SIDE_LENGTH/1.5);
-        add(nextLabel);
-
-        squareLabels[row][column] = nextLabel;
-    }
-
-    private void setCurrentRowTo(Integer[] checked) { //TODO: is this method a bit long?
-        // 0 = not in; 1 = in wrong position; 2 = in correct position
-        for (Integer integer : checked) {
-            if (integer == null) {
-                return;
-            }
-        }
-
-        Rectangle[] row = squares[currentRow];
-        for (int i = 0; i < 5; i++) {
-            GraphicsText label = squareLabels[currentRow][i];
-            label.setFillColor(Color.WHITE);
-            String ltr = label.getText();
-
-            Rectangle square = row[i];
-            switch (checked[i]) {
-                case 0:
-                    setSquareAndKeyColor(ltr, square, 0);
-                    break;
-            
-                case 1:
-                    setSquareAndKeyColor(ltr, square, 1);
-                    break;
-                    
-                case 2:
-                    setSquareAndKeyColor(ltr, square, 2);
-                    break;
-            
-                default:
-                    break;
-            }
-            canvas.draw();
-            
-            canvas.pause(200);
-        }
-        keyboard.refreshKeyboard();
-    }
-
-    private void setSquareAndKeyColor(String ltr, Rectangle square, Integer targetKeyStatus) {
-        Integer currentKeyStatus;
-        Color color = List.of(NOT_IN_COLOR, WRONG_POSITION_COLOR, RIGHT_POSITION_COLOR).get(targetKeyStatus);
-
-        square.setFillColor(color);
-        square.setStrokeColor(color);
-
-        currentKeyStatus = keyboard.getKeyStatus(ltr);
-        keyboard.setKeyStatus(ltr, 
-            currentKeyStatus < targetKeyStatus ? targetKeyStatus :
-            currentKeyStatus
-        );
+        grid.setCurrentRowTo(checked);
+        keyboard.setKeyColors(guess, checked);
     }
 
     public void reset() {
-        if (gameNumber > 0) {
-            setUnselected();
+        grid.reset();
+        keyboard.reset();
 
-            currentColumn = 0;
-            currentRow = 0;
-
-            for (int i = 0; i < 6; i++) {
-                for (int j = 0; j < 5; j++) {
-                    Rectangle square = squares[i][j];
-                    GraphicsText label = squareLabels[i][j];
-
-                    label.setFillColor(Color.BLACK);
-                    label.setText("");
-
-                    square.setFillColor(Color.WHITE);
-                    square.setStrokeColor(Color.BLACK);
-                }
-            }
-
-            keyboard.reset();
-
-            gameNumber++;
-            setSelected();
-            canvas.draw();
-            
-            return;
-        }
-        
-        currentRow = 0;
-        currentColumn = 0;
-        
-        assembleArrayOfSquares();
-        assembleArrayOfGraphicsTexts();
+        canvas.draw();
         
         gameNumber++;
-        setSelected();
-        canvas.draw();
+        return;
     }
 }

@@ -13,8 +13,8 @@ import edu.macalester.graphics.events.Key;
 import edu.macalester.graphics.ui.Button;
 
 public class Keyboard {
-    public static final double KEY_PADDING = WerdillUI.SQUARE_PADDING / 2;
-    public static final double KEY_SIDE_LENGTH = ((WerdillUI.SQUARE_SIDE_LENGTH + WerdillUI.SQUARE_PADDING) * 5.0 - KEY_PADDING * 11) / 10;
+    public static final double KEY_PADDING = Grid.SQUARE_PADDING / 2;
+    public static final double KEY_SIDE_LENGTH = ((Grid.SQUARE_SIDE_LENGTH + Grid.SQUARE_PADDING) * 5.0 - KEY_PADDING * 11) / 10;
 
     private final HashMap<String, Rectangle> keys = new HashMap<>();
     private final HashMap<String, GraphicsText> keyLabels = new HashMap<>();
@@ -39,7 +39,7 @@ public class Keyboard {
         label.setFillColor(Color.WHITE);
     }
 
-    public void refreshKeyboard() {
+    public void refresh() {
         for (String key : keyLabels.keySet()) {
             Rectangle square = keys.get(key);
             GraphicsText label = keyLabels.get(key);
@@ -83,16 +83,16 @@ public class Keyboard {
         parentUI.add(newKeyLabel);
     }
 
-    public void assembleKeyboard() {
-        double x = 0 + WerdillUI.SQUARE_PADDING;
-        double y = (WerdillUI.SQUARE_PADDING + WerdillUI.SQUARE_SIDE_LENGTH) * 6 + KEY_PADDING + KEY_SIDE_LENGTH;
+    public void assemble() {
+        double x = 0 + Grid.SQUARE_PADDING;
+        double y = (Grid.SQUARE_PADDING + Grid.SQUARE_SIDE_LENGTH) * 6 + KEY_PADDING + KEY_SIDE_LENGTH;
         createKeyRow(x, y, List.of("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"));
         
-        x = 0.25 * KEY_SIDE_LENGTH + WerdillUI.SQUARE_PADDING;
+        x = 0.25 * KEY_SIDE_LENGTH + Grid.SQUARE_PADDING;
         y += KEY_SIDE_LENGTH + KEY_PADDING;
         createKeyRow(x, y, List.of("A", "S", "D", "F", "G", "H", "J", "K", "L"));
 
-        x = 0.75 * KEY_SIDE_LENGTH + WerdillUI.SQUARE_PADDING;
+        x = 0.75 * KEY_SIDE_LENGTH + Grid.SQUARE_PADDING;
         y += KEY_SIDE_LENGTH + KEY_PADDING;
         createKeyRow(x, y, List.of("Z", "X", "C", "V", "B", "N", "M"));
         
@@ -117,6 +117,22 @@ public class Keyboard {
 
     public void setKeyStatus(String ltr, Integer status) {
         keyStatus.put(ltr, status);
+    }
+
+    public void setKeyColors(String[] ltrs, Integer[] colors) {
+
+        for (int index = 0; index < 5; index++) {
+            Integer targetKeyStatus = colors[index];
+            String ltr = ltrs[index];
+
+            // Color color = List.of(WerdillUI.NOT_IN_COLOR, WerdillUI.WRONG_POSITION_COLOR, WerdillUI.RIGHT_POSITION_COLOR).get(targetKeyStatus);
+            Integer currentKeyStatus = keyStatus.get(ltr);
+            keyStatus.put(ltr, 
+                currentKeyStatus < targetKeyStatus ? targetKeyStatus :
+                currentKeyStatus
+            );
+            refresh();
+        }
     }
 
     public void reset() {

@@ -56,13 +56,14 @@ public class Checker {
      *  0 = letter not in solution
      *  1 = letter in solution but wrong position
      *  2 = letter in correct position
-     * @param guess
+     * @param guessCopy
      * @return 
      */
     public Integer[] check(String[] guess) {
+        String[] guessCopy = guess.clone();
         // Ensures all letter are lowercase
         String guessString = "";
-        for (String ltr : guess) {
+        for (String ltr : guessCopy) {
             guessString += ltr.toLowerCase();
         }
         // Reject non-words
@@ -78,19 +79,19 @@ public class Checker {
         // Checks ALL letters for *exact,* correct position. 
         // Removes letter from guess Array if it is in the right spot (avoid false yellow boxes)
         for (int i = 0; i < 5; i++) {
-            if (guess[i].equals(solutionCopy.get(i))) {
+            if (guessCopy[i].equals(solutionCopy.get(i))) {
                 ret[i] = 2;
-                guess[i] = "";
+                guessCopy[i] = "";
                 solutionCopy.set(i, "") ;
             }
         }
         // Checks if solution contains each letter
         // Again, removes letters once checked to avoid false positives.
         for (int i = 0; i < 5; i++) {
-            if (solutionCopy.contains(guess[i]) && ret[i] == 0) {
+            if (solutionCopy.contains(guessCopy[i]) && ret[i] == 0) {
                 ret[i] = 1;
-                solutionCopy.remove(solutionCopy.indexOf(guess[i]));
-                guess[i] = "";
+                solutionCopy.remove(solutionCopy.indexOf(guessCopy[i]));
+                guessCopy[i] = "";
             }
         }
         return ret;
