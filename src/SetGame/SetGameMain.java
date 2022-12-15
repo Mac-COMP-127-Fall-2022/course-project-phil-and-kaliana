@@ -20,7 +20,9 @@ public class SetGameMain {
         startGame();
     }
 
-    // Iterates through each trait and creates a unique card for each one
+     /**
+     * Iterates through each trait and creates a unique card for each one, adding them to the deck
+     */
     public void createDeck() {
         deck = new ArrayList<>();
         for (int color = 0; color < NUMBER_OF_TRAIT_VARIANTS; color++) {

@@ -1,9 +1,8 @@
 package SetGame;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-
-import java.awt.Color;
 
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
@@ -36,13 +35,20 @@ public class Card extends GraphicsGroup {
         Color.BLUE
     );
 
-    // List of lighter versions of colors (instead of lined)
+    // List of lighter versions of colors (instead of lined) for middle shading
     private final List<Color> halfColors = List.of(
         new Color(255, 127, 127),
         new Color(200, 255, 200),
         new Color(127, 127, 255)
     );
-    
+
+
+    /**
+     * @param color     Color value of a card (red, green, blue)
+     * @param num       Number value of a card (1, 2, 3 of each shape)
+     * @param shape     Shape of a card (triangle, diamond, rectangle)
+     * @param fill      Shading of a card (empty, light or full/dark)
+     */
     public Card(int color, int num, int shape, int fill) {
         this.color = color;
         this.num = num;
@@ -76,7 +82,10 @@ public class Card extends GraphicsGroup {
         placeShapes(shapes);
     }
 
-    // gets trait. 0 is color, 1 is number, 2 is shape, 3 is fill/shading
+    /**
+     * @param trait     Takes in what kind of trait the caller wants (color, number, shape or shading)
+     * @return          The value of the trait (which color, number, shape or shading)
+     */
     public Integer getTrait(int trait){
         switch (trait) {
             case 0:
@@ -96,8 +105,11 @@ public class Card extends GraphicsGroup {
         }
     }
 
-    // Place shapes within the card. Starting at x of card padding
-    // and a y that depends on amount of items in the card.
+
+    /**
+     * Place shapes within the card. Starting at x of card padding and a y that depends on amount of items in the card.
+     * @param shapes    A list of the shapes which are going to be on the card
+     */
     private void placeShapes(ArrayList<GraphicsObject> shapes) {
         int x = CARD_PADDING;
         double y;
@@ -138,7 +150,12 @@ public class Card extends GraphicsGroup {
         }
     }
 
-    // Returns the color of fill based on its color AND fill status (aka full, half full or empty)
+    /**
+     * Returns the color of fill based on its color AND fill status (aka full, half full or empty)
+     * @param colorInt      Which color it is between red, green, blue
+     * @param fillInt       Whether it is empty, light or dark
+     * @return              The color that the shape will be filled
+     */
     private Color getColorFromInt(int colorInt, int fillInt) {
         if (fillInt == 1) {
             return halfColors.get(colorInt);
@@ -149,7 +166,13 @@ public class Card extends GraphicsGroup {
         }
     }
 
-    // createShapes
+    // below createShapes
+    /**
+     * 
+     * @param color     The color of the shape
+     * @param fill      The color it needs to be filled
+     * @return          The Triangle with the correct outline and fill
+     */
     private Path createTriangle(int color, int fill){
         // crying
         Path triangle = Path.makeTriangle(
@@ -165,6 +188,12 @@ public class Card extends GraphicsGroup {
         return triangle;
     }
 
+    /**
+     * 
+     * @param color     The color of the shape
+     * @param fill      The color it needs to be filled
+     * @return          The Diamond with the correct outline and fill
+     */
     private Path createDiamond(int color, int fill){
         // more crying
         Path diamond = new Path(List.of(
@@ -181,6 +210,12 @@ public class Card extends GraphicsGroup {
         return diamond;
     }
 
+        /**
+     * 
+     * @param color     The color of the shape
+     * @param fill      The color it needs to be filled
+     * @return          The Rectangle with the correct outline and fill
+     */
     private Path createRectangle(int color, int fill){
         // even more crying
         Path rect = new Path(
