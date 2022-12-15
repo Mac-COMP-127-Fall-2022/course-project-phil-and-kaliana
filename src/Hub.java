@@ -10,9 +10,6 @@ import edu.macalester.graphics.ui.Button;
 public class Hub {
     private final CanvasWindow canvas;
 
-    // private WerdillGame werdill;
-    // private SetGameMain set;
-
     private Button werdillButton;
     private Button setButton;
 
@@ -45,20 +42,10 @@ public class Hub {
             new SetGameMain();
         });
 
-        // setButton.setPosition(0, 40);
-
         canvas.add(setButton);
         canvas.add(werdillButton);
     }
     
-    // private void startWerdill() throws IOException {
-    //     werdill = new WerdillGame();
-    // }
-    
-    // private void startSet() throws IOException {
-    //     set = new SetGameMain();
-    // }
-
     public static void main(String[] args) throws Exception {
         new Hub();
     }
